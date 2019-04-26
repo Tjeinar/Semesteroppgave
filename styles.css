@@ -1,0 +1,28 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    background-color: whitesmoke;
+    font-family: "Trebuchet MS", Helvetica, sans-serif
+}
+
+.intro-txt{
+    display:flex;
+    font-size: 10px;
+    text-align: center;
+}
+
+.flex-container{
+    margin-top:10%;
+    display:flex;
+    flex-direction: column;
+}
+
+.row-1{ 
+    display:flex;
+    justify-content: space-evenly;
+    margin-bottom: 10%
+}
+.row-2{
+    display:flex;
+    justify-content: space-evenly;
+}

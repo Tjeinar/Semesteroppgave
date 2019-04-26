@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Tall Norges befolkning</title>
-  <meta name="author" content="name">
+    <title>Tall over norges befolkning</title>
+  <meta name="Group-7" content="name">
   <meta name="description" content="description here">
   <link rel="stylesheet" href="styles.css" type="text/css">
   </head>
   <body>
+    <!--Navigasjon for det forskjellige innholdet sok skal presenters-->
         <nav class ="menu">
           <ul>
             <li>Introduksjon</li>
@@ -17,29 +18,38 @@
             <li>Sammenligning</li>
           </ul>
         </nav>
+        <!--Hoveddelen til nettstedet-->
         <main class="main">
+          <!--Tekst for å introdusere brukeren til siden, og innholdet-->
           <p class="intro-txt">
             Dette nettstedet er laget for å presentere produktet vårt. <br>
             Produktet vårt er et verktøy for å vise data om Norges befolkning ved hjelp av data fra ssb.no <br>
             Vær obs på at tallene kan inneholde feil.
 
-            Linker til SSB sine nettsider:
-            <ul class="links">
-              <li><a href="http://data.ssb.no/api/v0/dataset/104857?lang=no">http://data.ssb.no/api/v0/dataset/104857?lang=no</a></li>
-              <li><a href="http://data.ssb.no/api/v0/dataset/85432?lang=no">http://data.ssb.no/api/v0/dataset/85432?lang=no</a></li>
-            </ul>
-        
         </p>
+        <!--De ulike elementene som skal bli presentert, disse vil bli plassert og stylet ved hjelp av flexbox-css-->
           <div class= flex-container>
-                <div class="intro">txt</div>
+              <!--Introduksjonen består av tekst som beskriver produktet vårt, lenker til SSB-sine offentlige nettsider, og en notis om mulig feil i datasett-->
+                <div class="introduction">
+                  <!--Lenker til datasettene som blir brukt og presentert på nettstedet-->
+                  Linker til SSB sine nettsider:
+                  <ul class="links">
+                    <li><a href="http://data.ssb.no/api/v0/dataset/104857?lang=no">http://data.ssb.no/api/v0/dataset/104857?lang=no</a></li>
+                    <li><a href="http://data.ssb.no/api/v0/dataset/85432?lang=no">http://data.ssb.no/api/v0/dataset/85432?lang=no</a></li>
+                  </ul>
+                </div>
+                <!--Oversikt av kommunene ved hjelp av navn, kommunenumer og siste befolkningsmåling-->
                 <div class="overview">txt</div>
+                <!--Lar brukeren skrive inn et kommunenummer og viser informasjon basert på dette-->
                 <div class="details">txt</div>
+                <!--Lar brukeren skrive inn to kommunummer og viser data for utvikling av sysselsettning.-->
                 <div class="comparison">txt</div>
           </div>
-
         </main>
-        <footer>
-          <p class="footer">Dette er  en besvarelse i emnet INFO134</p>
+
+        <!--Footer for nettstedet-->
+        <footer class="footer">
+          <p>Dette er  en besvarelse i emnet INFO134</p>
       </footer>
   
 

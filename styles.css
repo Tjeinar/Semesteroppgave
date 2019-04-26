@@ -13,9 +13,9 @@
 .menu li {
     display: block;
     color: white;
-    text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    align-items: center;
   }
 .menu li:hover {
     background-color: #111;
@@ -34,6 +34,10 @@ main{
   justify-content: center;
   flex-direction: column;
   padding:20px;
+}
+
+.links, a{
+  text-decoration: none;
 }
 
 .intro-txt{

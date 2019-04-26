@@ -61,4 +61,6 @@ main{
   bottom:0;
   width:100%;
   font-size:13px;
+  height:auto;
+  overflow:hidden;
 }

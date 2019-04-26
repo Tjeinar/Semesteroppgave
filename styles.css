@@ -50,7 +50,12 @@ main{
 .intro-txt{
   display:flex;
   font-size: 15px;
-  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.information{
+  display:none;
 }
 /*---Footer---*/
 .footer{

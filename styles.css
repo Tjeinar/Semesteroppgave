@@ -55,7 +55,7 @@ main{
 }
 
 .information{
-  display:none;
+  display:flex;
 }
 /*---Footer---*/
 .footer{

@@ -54,11 +54,25 @@ main{
   flex-wrap: wrap;
 }
 
-.information, .overview, .details, .comparison{
+.information{
   display:flex;
   flex-direction: column;
   width: auto;
 }
+
+.overview{
+display: none;
+}
+
+.details{
+display:none;
+}
+
+
+.comparison{
+display:none;
+}
+
 /*---Footer---*/
 .footer{
   background-color: #333;

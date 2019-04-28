@@ -36,9 +36,10 @@ main{
   padding:20px;
 }
 /*---Stil på lenker---*/
-.links, a{
+.links, a, a:visited{
   text-decoration: none;
 }
+
 /*---flex-container for hovedinnhold---*/
 .flex-container{
   margin-top:10%;
@@ -49,13 +50,16 @@ main{
 /*---Stil på introduksjonsteksten---*/
 .intro-txt{
   display:flex;
-  font-size: 15px;
+  flex-direction: column;
+  font-size: auto;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.information{
+.information, .overview, .details, .comparison{
   display:flex;
+  flex-direction: column;
+  width: auto;
 }
 /*---Footer---*/
 .footer{

@@ -52,7 +52,6 @@ main{
   display:flex;
   flex-direction: column;
   font-size: auto;
-  justify-content: center;
   flex-wrap: wrap;
 }
 

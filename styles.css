@@ -13,7 +13,7 @@
 .menu li {
     display: block;
     color: #ffffff;
-    padding: 14px 16px;
+    padding: 10px 10px;
     text-decoration: none;
     align-items: center;
   }
@@ -43,7 +43,7 @@ main{
 /*---flex-container for hovedinnhold---*/
 .flex-container{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center
 }
 /*---Stil på introduksjonsteksten---*/

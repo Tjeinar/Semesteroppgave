@@ -1,0 +1,1 @@
+//JS-dokument for funksjonalitet

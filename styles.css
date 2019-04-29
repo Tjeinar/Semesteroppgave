@@ -46,6 +46,24 @@ main{
   flex-direction: column;
   justify-content: center
 }
+
+/*---Stil på tabellen som holder dataen---*/
+th, td, input{
+  font:14px Times;
+}
+
+table, th, td{
+  border: solid 1px #333;
+  border-collapse: collapse;
+  padding: 2px 3px;
+  text-align: center;
+}
+
+th{
+  font-weight:bold;
+}
+
+
 /*---Stil på introduksjonsteksten---*/
 .intro-txt{
   display:flex;

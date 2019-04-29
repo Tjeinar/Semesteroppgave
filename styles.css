@@ -1,4 +1,4 @@
- /*----Navigation bar----  */
+ /*---Navigasjonsline---*/
  .menu ul{
     list-style-type: none;
     margin: 0;
@@ -13,7 +13,7 @@
 .menu li {
     display: block;
     color: #ffffff;
-    padding: 14px 16px;
+    padding: 10px 10px;
     text-decoration: none;
     align-items: center;
   }
@@ -21,37 +21,77 @@
     background-color: #111;
   }
 
+/*---Generell dokumentstil---*/
 html, body{
   height: 100%;
   margin: 0;
   background-color: #f5f5f5;
 }
 
+/*---Hovedområde for presentasjon av innhold---*/
 main{
   display:flex;
   justify-content: center;
   flex-direction: column;
   padding:20px;
 }
-
-.links, a{
+/*---Stil på lenker---*/
+.links, a, a:visited{
   text-decoration: none;
 }
 
-.intro-txt{
-  display:flex;
-  font-size: 15px;
+/*---flex-container for hovedinnhold---*/
+.flex-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+}
+
+/*---Stil på tabellen som holder dataen---*/
+th, td, input{
+  font:14px Times;
+}
+
+table, th, td{
+  border: solid 1px #333;
+  border-collapse: collapse;
+  padding: 2px 3px;
   text-align: center;
 }
 
-.flex-container{
-  margin-top:10%;
-  display:flex;
-  flex-direction: row;
-  justify-content: center;
+th{
+  font-weight:bold;
 }
 
-/*----Footer----*/
+
+/*---Stil på introduksjonsteksten---*/
+.intro-txt{
+  display:flex;
+  flex-direction: column;
+  font-size: auto;
+  flex-wrap: wrap;
+}
+
+.information{
+  display:flex;
+  flex-direction: column;
+  width: auto;
+}
+
+.overview{
+display: none;
+}
+
+.details{
+display:none;
+}
+
+
+.comparison{
+display:none;
+}
+
+/*---Footer---*/
 .footer{
   background-color: #333;
   color:#ffffff;
@@ -60,4 +100,6 @@ main{
   bottom:0;
   width:100%;
   font-size:13px;
+  height:auto;
+  overflow:hidden;
 }

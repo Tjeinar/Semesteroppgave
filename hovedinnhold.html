@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="description here">
     <link rel="stylesheet" href="styles.css" type="text/css">
-    <link rel="script" href="main.js" type="script/js">
+    <script src="main.js"></script>
     <title>Tall over norges befolkning</title>
   </head>
   <body>
     <!--Navigasjon for det forskjellige innholdet sok skal presenters-->
         <nav class ="menu">
           <ul>
-            <li><input type = "button" onclick="">Introduksjon</li>
-            <li><input type = "button" onclick="">Oversikt</li>
-            <li><input type = "button" onclick="">Detaljer</li>
-            <li><input type = "button" onclick="">Sammenligning</li>
+            <li><input type = "button" value="Introduksjon" onclick=""></li>
+            <li><input type = "button" value="Oversikt" onclick=""></li>
+            <li><input type = "button" value="Detaljer" onclick=""></li>
+            <li><input type = "button" value="Sammenligning"onclick=""></li>
           </ul>
         </nav>
         <!--Hoveddelen til nettstedet-->
@@ -39,21 +39,31 @@
               </ul>		
             </article>
           </div>
-				<div class="information">
-					<!--Oversikt av kommunene ved hjelp av navn, kommunenumer og siste befolkningsmåling-->
-					<div class="overview">
-            
-          </div>
-					<!--Lar brukeren skrive inn et kommunenummer og viser informasjon basert på dette-->
-					<div class="details">txt</div>
-					<!--Lar brukeren skrive inn to kommunummer og viser data for utvikling av sysselsettning.-->
-					<div class="comparison">txt</div>
-				</div>
+        </div>
+              <!--Oversikt av kommunene ved hjelp av navn, kommunenumer og siste befolkningsmåling-->
+              <div class="overview">
+                  <table>
+                      <thead>
+                        <th>Kom.navn</th>
+                        <th>Kom.nr</th>
+                        <th>Menn</th>
+                        <th>Kvinner</th>
+                      </thead>
+                      <tbody id="kommuner-data"></tbody>
+                    </table>
+              </div>
+              
+              <!--Lar brukeren skrive inn et kommunenummer og viser informasjon basert på dette-->
+              <div class="details">txt</div>
+              <!--Lar brukeren skrive inn to kommunummer og viser data for utvikling av sysselsettning.-->
+              <div class="comparison">txt</div>
+        </div>
+       </div>
 			</div>
         </main>
         <!--Footer for nettstedet-->
         <footer class="footer">
-          <p>Eksamensbesvarelse INFO134</p>
+          <p id="footer-text">Eksamensbesvarelse INFO134</p>
       </footer>
   </body>
 </html>

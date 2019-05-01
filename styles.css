@@ -74,6 +74,7 @@ table, th, td{
   padding: 2px 3px;
   text-align: center;
   min-width: 20%;
+  max-width: 50%;
   white-space:pre-wrap;
   table-layout:auto;
 }

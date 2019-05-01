@@ -16,6 +16,8 @@ bf_data = "http://wildboy.uib.no/~tpe056/folk/104857.json";
 ss_data = "http://wildboy.uib.no/~tpe056/folk/100145.json";
 ud_data = "http://wildboy.uib.no/~tpe056/folk/85432.json";
 
+//Funksjon som tar inn navn på kommune og data for kommune, og deretter lager en tabellen med kommunenavn, kommunenummer og befolkningsdata
+//Valgte å bruke "template literals" fordi det er ryddig og oversiktlig, og enkelt å endre på. 
 function add_row(navn, kommune_data){
     var row = 
         `<td>${navn}</td>
@@ -60,5 +62,5 @@ fetch_data();
 
 
 function change_table(){
-
+    
 }

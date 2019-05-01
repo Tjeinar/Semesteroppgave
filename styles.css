@@ -65,7 +65,7 @@ main{
 
 /*---Stil på tabellen som holder dataen---*/
 th, td, input{
-  font: auto Times;
+  font: Times;
 }
 
 table, th, td{
@@ -79,8 +79,12 @@ table, th, td{
 }
 
 th{
-  font-size:8px;
+  font-size:10px;
   font-weight: bold;
+}
+
+td{
+font-size:15px
 }
 
 

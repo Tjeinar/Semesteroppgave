@@ -93,14 +93,15 @@ th{
   flex-wrap: wrap;
 }
 .overview{
-  display:flex;
+  display:none;
   flex-direction: column;
   max-width:100%;
   white-space: pre-wrap;
 }
 
 .details{
-display:none;
+display:flex;
+
 }
 
 

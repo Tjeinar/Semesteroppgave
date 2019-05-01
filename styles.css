@@ -1,25 +1,41 @@
  /*---Navigasjonsline---*/
  .menu ul{
+   display:flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
     position: sticky;
+    white-space: nowrap;
  }
 .menu li {
-    float:left;
-}
-.menu li {
-    display: block;
+    display: flex;
     color: #ffffff;
     padding: 10px 10px;
     text-decoration: none;
     align-items: center;
+    float:left;
   }
+
+/*--TODO: Sørge for at teksten til navbaren passer på små skjermer--*/
+
+@media only screen and (max-width:600px){
+  .menu li{
+    
+  }
+}
 .menu li:hover {
     background-color: #111;
   }
+
+input[type="button"]{
+  display: flex;
+  border: none;
+  background: none;
+  color:white;
+}
+  
 
 /*---Generell dokumentstil---*/
 html, body{
@@ -49,7 +65,7 @@ main{
 
 /*---Stil på tabellen som holder dataen---*/
 th, td, input{
-  font:14px Times;
+  font: auto Times;
 }
 
 table, th, td{
@@ -57,29 +73,29 @@ table, th, td{
   border-collapse: collapse;
   padding: 2px 3px;
   text-align: center;
+  min-width: 20%;
+  white-space:pre-wrap;
+  table-layout:auto;
 }
 
 th{
-  font-weight:bold;
+  font-size:8px;
+  font-weight: bold;
 }
 
 
 /*---Stil på introduksjonsteksten---*/
 .intro-txt{
-  display:flex;
+  display:none;
   flex-direction: column;
   font-size: auto;
   flex-wrap: wrap;
 }
-
-.information{
+.overview{
   display:flex;
   flex-direction: column;
-  width: auto;
-}
-
-.overview{
-display: none;
+  max-width:100%;
+  white-space: pre-wrap;
 }
 
 .details{
@@ -96,10 +112,14 @@ display:none;
   background-color: #333;
   color:#ffffff;
   text-align:center;
-  position: absolute;
+  position: sticky;
   bottom:0;
   width:100%;
-  font-size:13px;
+  font-size:15px;
   height:auto;
   overflow:hidden;
+}
+
+#footer-text{
+  margin:5px;
 }

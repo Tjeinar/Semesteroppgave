@@ -6,6 +6,7 @@
     <meta name="description" content="description here">
     <link rel="stylesheet" href="styles.css" type="text/css">
     <script src="main.js"></script>
+    <script src="searchfilter.js"></script>
     <title>Tall over norges befolkning</title>
   </head>
   <body>
@@ -54,35 +55,29 @@
               </div>
               <!--Input-felt hvor brukeren kan søke på kommunenummer.-->
               <div class="search">
-                <input type="text"class="searchTerm" placeholder="Søk på kommune...">
+                <input type="text" id="searchTerm" onkeyup="searchFunction()" placeholder="Søk på kommune...">
                 <button type="submit" class="searchButton">
                   <i class="fa fa-search"></i>
                 </button>
               </div>
               
               <!--Lar brukeren skrive inn et kommunenummer og viser informasjon basert på dette-->
-              <div class="details"><table>
-                <thead>
-                  <tr>
-                    <th>Kom.navn</th>
-                    <td>2</td>
-                  </tr>
-                  <tr>
-                    <th>Kom.nr</th>
-                    <td>2</td>
-                  </tr>
-                  <tr>
-                    <th>Menn</th>
-                    <td>2</td>
-                  </tr>
-                  <tr>
-                    <th>Kvinner</th>
-                    <td>2</td>
-                  </tr>
-                </thead>
-                <tbody id="kommuner-data-small-screen"></tbody>
+              <table id="myTable">
+                <tr class="header">
+                  <th>Kom.navn</th>
+                  <th>Kom.nr</th>
+                </tr>
+                <tr>
+                  <td>Voss</td>
+                  <td>5000</td>
+                </tr>
+                <tr>
+                  <td>Bergen</td>
+                  <td>5001</td>
+                </tr>
+                </tr>
               </table>
-            </div>
+            
               <!--Lar brukeren skrive inn to kommunummer og viser data for utvikling av sysselsettning.-->
               <div class="comparison">txt</div>
         </div>

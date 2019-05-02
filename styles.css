@@ -97,7 +97,7 @@ font-size:15px
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.searchTerm {
+#searchTerm {
   width: 100%;
   border: 3px solid #00B4CC;
   border-right: none;
@@ -105,7 +105,7 @@ font-size:15px
   height: 20px;
   border-radius: 5px 0 0 5px;
   outline: none;
-  color: #9DBFAF;
+  color: #111;
 }
 .searchButton {
   width: 40px;

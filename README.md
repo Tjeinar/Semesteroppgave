@@ -21,7 +21,7 @@ I denne oppgaven skal vi lage et verktøy som viser data om norges befolkning.
 - Presentere data vertikalt på liten skjerm
 - Ellers presentere data horisontalt
 
-#Data
+# Data
 
 
 # Rapport og øvrige filer

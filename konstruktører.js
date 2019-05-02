@@ -7,52 +7,46 @@ function removeLoadingMessage() {
 }
 
 function konstruktør(fil){
-  this.data = undefined;
+  this.data = undefined; //Her kommer datasettene når de er lastet ned
   this.getNames = function() {
     var liste = [];
     for (f in this.data) {
-      liste.push(f);
+      liste.push(f); //lager en liste med alle navnene
     }
     return liste;
   };
   this.getIDs = function() {
     var liste = [];
     for (f in this.data) {
-      liste.push(this.data[f].kommunenummer);
+      liste.push(this.data[f].kommunenummer); //lager en liste med alle kommunenummrene
     }
     return liste;
   };
   this.getInfo = function(kn){
-    for (g in this.data) {
-      if (this.data[g].kommunenummer == kn){
-        console.log(g)
-        console.log(this.data[g]);
+    for (g in this.data) { //Går gjennom alle kommunenummrene
+      if (this.data[g].kommunenummer == kn){ //Når vi kommer til det rette kommunenummeret
+        console.log(g) // logger vi navnet
+        console.log(this.data[g]); // og informasjonen om datasettet.
       };
     }
   };
-  this.load = function hentData(kategori) {
+  this.load = function hentData(kategori) { //denne funksjonen sender forespørsel om å laste ned datasettet.
     var respons = undefined;
     var htp = new XMLHttpRequest();
     htp.open("GET", fil, true);
-    htp.onreadystatechange = function(callback) {
+    htp.onreadystatechange = function() {
       if (htp.readyState == 4 && htp.status == 200){
         respons = JSON.parse(htp.responseText);
-        if (kategori == "befolk") {
-          for (i in respons.elementer) {
-            befolkning.data = respons.elementer;
-          }
-          befolkning.onload();
+        if (kategori == "befolk") { //kategori avgjør hvilke objektet som skal få datasettet
+          befolkning.data = respons.elementer; // datasetter blir så lagt til i data til objektet
+          befolkning.onload(); // kaller på onload-funksjonen som man skulle.
         };
         if (kategori == "syssels") {
-          for (i in respons.elementer) {
-            sysselsatte.data = respons.elementer;
-          }
+          sysselsatte.data = respons.elementer;
           sysselsatte.onload();
         };
         if (kategori == "utdan") {
-          for (i in respons.elementer) {
-            utdanning.data = respons.elementer;
-          }
+          utdanning.data = respons.elementer;
           utdanning.onload();
         };
       };
@@ -61,6 +55,7 @@ function konstruktør(fil){
   };
 }
 
+//Her oppretter vi objekter hvor hvert av datasettene og gir dem onload-egenskapen.
 var befolkning = new konstruktør("http://wildboy.uib.no/~tpe056/folk/104857.json");
 befolkning.onload = function() {
   enableNavigationButtons();

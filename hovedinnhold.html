@@ -1,46 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="NB">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="hovedinnhold.css" type="text/css">
-    <title>Tall Norges befolkning</title>
-  <meta name="author" content="name">
-  <meta name="description" content="description here">
-  <link rel="stylesheet" href="stylesheet.css" type="text/css">
+    <meta name="description" content="description here">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="main.js"></script>
+    <title>Tall over norges befolkning</title>
   </head>
   <body>
+    <!--Navigasjon for det forskjellige innholdet sok skal presenters-->
         <nav class ="menu">
           <ul>
-            <li>Introduksjon</li>
-            <li>Oversikt</li>
-            <li>Detaljer</li>
-            <li>Sammenligning</li>
+            <li><input type = "button" value="Introduksjon" onclick=""></li>
+            <li><input type = "button" value="Oversikt" onclick=""></li>
+            <li><input type = "button" value="Detaljer" onclick=""></li>
+            <li><input type = "button" value="Sammenligning"onclick=""></li>
           </ul>
         </nav>
-        <main>
-          <p class="intro-txt">
-            Dette nettstedet er laget for å presentere produktet vårt. 
-            Produktet vårt er et verktøy for å vise data om Norges befolkning ved hjelp av data fra ssb.no
-            Vær obs på at tallene kan inneholde feil.
-
-            Linker til SSB sine nettsider:
-            <ul>
-              <li>http://data.ssb.no/api/v0/dataset/104857?lang=no</li>
-              <li>http://data.ssb.no/api/v0/dataset/100145?lang=no</li>
-              <li>http://data.ssb.no/api/v0/dataset/85432?lang=no</li>
-            </ul>
-        
+        <!--Hoveddelen til nettstedet-->
+        <main class="main">
+        <!--De ulike elementene som skal bli presentert, disse vil bli plassert og stylet ved hjelp av flexbox-css-->
+          <div class= flex-container>
+              <!--Introduksjonen består av tekst som beskriver produktet vårt, lenker til SSB-sine offentlige nettsider, og en notis om mulig feil i datasett-->
+            <div class="introduction">
+            <!--Tekst for å introdusere brukeren til siden, og innholdet-->
+            <article class="intro-txt">
+              Dette nettstedet er laget for å presentere produktet vårt.<br><br>
+              Produktet vårt er et verktøy for å vise data om Norges befolkning ved hjelp av data fra ssb.no <br><br>
+              OBS! Tallene kan inneholde feil, vi tar forbehold om avvik i dataen som blir presentert.<br><br> 
+              
+              <!--Lenker til datasettene som blir brukt og presentert på nettstedet-->
+              Lenker til SSB-sine datasett:
+              <ul class="links">
+              <li><a href="http://data.ssb.no/api/v0/dataset/104857?lang=no">Befolkning, etter kjønn, Kommuner pr 1.1.2007 - siste år</a></li><br>
+              <li><a href="http://data.ssb.no/api/v0/dataset/100145?lang=no">Sysselsatte pr. 4. kv. etter kjønn og alder (andel i prosent). Kommuner, 2005 - siste år</a></li><br>
+              <li><a href="http://data.ssb.no/api/v0/dataset/85432?lang=no">Utdannningsnivå. Personer 16 år og over, etter kjønn, i prosent. Kommuner, 1970 - siste år</a></li>
+              </ul>		
+            </article>
+          </div>
+        </div>
+              <!--Oversikt av kommunene ved hjelp av navn, kommunenumer og siste befolkningsmåling-->
+              <div class="overview">
+                  <table>
+                      <thead>
+                        <th>Kom.navn</th>
+                        <th>Kom.nr</th>
+                        <th>Menn</th>
+                        <th>Kvinner</th>
+                      </thead>
+                      <tbody id="kommuner-data"></tbody>
+                    </table>
+              </div>
+              <!--Input-felt hvor brukeren kan søke på kommunenummer.-->
+              <div class="search">
+                <input type="text"class="searchTerm" placeholder="Søk på kommune...">
+                <button type="submit" class="searchButton">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+              
+              <!--Lar brukeren skrive inn et kommunenummer og viser informasjon basert på dette-->
+              <div class="details"><table>
+                <thead>
+                  <tr>
+                    <th>Kom.navn</th>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <th>Kom.nr</th>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <th>Menn</th>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <th>Kvinner</th>
+                    <td>2</td>
+                  </tr>
+                </thead>
+                <tbody id="kommuner-data-small-screen"></tbody>
+              </table>
+            </div>
+              <!--Lar brukeren skrive inn to kommunummer og viser data for utvikling av sysselsettning.-->
+              <div class="comparison">txt</div>
+        </div>
+       </div>
+			</div>
         </main>
-        </p>
-
-        <div class="overview"></div>
-
-        <div class="details"></div>
-
-        <div class="comparison"></div>
-        <footer>
-          <p class="footer">Dette er  en besvarelse i emnet INFO134</p>
-        </footer>
+        <!--Footer for nettstedet-->
+        <footer class="footer">
+          <p id="footer-text">Eksamensbesvarelse INFO134</p>
+      </footer>
   </body>
 </html>

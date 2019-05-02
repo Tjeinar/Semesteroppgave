@@ -1,22 +1,164 @@
- /*----Navigation bar----  */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+ /*---Navigasjonsline---*/
  .menu ul{
+   display:flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    position: sticky;
+    white-space: nowrap;
  }
 .menu li {
-    float:left;
-}
-.menu li {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
+    display: flex;
+    color: #ffffff;
+    padding: 10px 10px;
     text-decoration: none;
+    align-items: center;
+    float:left;
   }
+
+/*--TODO: Sørge for at teksten til navbaren passer på små skjermer--*/
+
+@media only screen and (max-width:600px){
+  .menu li{
+    
+  }
+}
 .menu li:hover {
     background-color: #111;
   }
-/*----Footer----*/
+
+input[type="button"]{
+  display: flex;
+  border: none;
+  background: none;
+  color:white;
+}
+  
+
+/*---Generell dokumentstil---*/
+html, body{
+  height: 100%;
+  margin: 0;
+  background-color: #f5f5f5;
+}
+
+/*---Hovedområde for presentasjon av innhold---*/
+main{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  padding:20px;
+}
+/*---Stil på lenker---*/
+.links, a, a:visited{
+  text-decoration: none;
+}
+
+/*---flex-container for hovedinnhold---*/
+.flex-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+}
+
+/*---Stil på tabellen som holder dataen---*/
+th, td, input{
+  font: Times;
+}
+
+table, th, td{
+  border: solid 1px #333;
+  border-collapse: collapse;
+  padding: 2px 3px;
+  text-align: center;
+  min-width: 20%;
+  max-width: 50%;
+  white-space:pre-wrap;
+  table-layout:auto;
+}
+
+th{
+  font-size:10px;
+  font-weight: bold;
+}
+
+td{
+font-size:15px
+}
+/*-- Stil på searchbar --*/
+.search {
+  width: 20%;
+  position: relative;
+  display: flex;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+.searchButton:hover {
+  background: #0b7dda;
+}
+
+/*---Stil på introduksjonsteksten---*/
+.intro-txt{
+  display:none;
+  flex-direction: column;
+  font-size: auto;
+  flex-wrap: wrap;
+}
+.overview{
+  display:none;
+  flex-direction: column;
+  max-width:100%;
+  white-space: pre-wrap;
+}
+
+.details{
+display:flex;
+
+}
+
+
+.comparison{
+display:none;
+}
+
+/*---Footer---*/
+.footer{
+  background-color: #333;
+  color:#ffffff;
+  text-align:center;
+  position: sticky;
+  bottom:0;
+  width:100%;
+  font-size:15px;
+  height:auto;
+  overflow:hidden;
+}
+
+#footer-text{
+  margin:5px;
+}

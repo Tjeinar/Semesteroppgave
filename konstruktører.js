@@ -30,33 +30,34 @@ function konstruktør(fil){
       }
     }
   };
-  this.load = function hentData(category) {
+  //Funksjon som tar inn en URL som argument og sender en forespørsel til nettadressen, og returnerer rådata, eller eventuelt returnerer en feilmelding. 
+  this.load = function fetch_data(category) {
     var response = undefined;
+    //Definerer variabel for forespørsel-objektet
     var htp = new XMLHttpRequest();
-    htp.open("GET", fil, true);
+    //Sjekker om objektet har fått endret tilstand
     htp.onreadystatechange = function() {
+      //readystate(4) == DONE, dvs at forespørselen er ferdig
+      //status(200) == OK, dvs at forespørselen returnerte med OK
       if (htp.readyState == 4 && htp.status == 200){
+      //Lagrer responen til variabel "response"
         response = JSON.parse(htp.responseText);
-        if (category == "befolk") {
-          for (var population in response.elementer) {
-            population.data = response.elementer;
-          }
+      //Dersom parameteret gitt til funksjonen starter med befolking
+        if (category.startswith("befolk")) {
+          population.data = response.elementer;
           population.onload();
         }
-        if (category == "syssels") {
-          for (var working in response.elementer) {
-            working.data = response.elementer;
-          }
+        if (category.startswith("syssels")) {
+          working.data = response.elementer;
           working.onload();
         }
-        if (category == "utdan") {
-          for (var education in response.elementer) {
-            education.data = response.elementer;
-          }
+        if (category.startswith("utdann")) {
+          education.data = response.elementer;
           education.onload();
         }
       }
     };
+    htp.open("GET", fil, true);
     htp.send();
   };
 }

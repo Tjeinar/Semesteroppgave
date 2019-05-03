@@ -16,7 +16,18 @@ bf_data = "http://wildboy.uib.no/~tpe056/folk/104857.json";
 ss_data = "http://wildboy.uib.no/~tpe056/folk/100145.json";
 ud_data = "http://wildboy.uib.no/~tpe056/folk/85432.json";
 
+function find_lastest_date(commune_data){
+    date_list = [];
+    for(var date in commune_data.Menn){
+        date_list.push(date);
+
+    }
+    console.log(date_list);
+}
+
+
 function add_vertical_row(name, commune_data){
+    
     var row = 
         `<td>${name}</td>
         <td>${commune_data.kommunenummer}</td>
@@ -54,7 +65,7 @@ function fetch_data(data){
         });
         }
     };
-    xhr.open("GET", bf_data , true);
+    xhr.open("GET", ud_data , true);
     xhr.send();
     }
 fetch_data();

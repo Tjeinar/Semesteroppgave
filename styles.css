@@ -90,26 +90,25 @@ font-size:15px
 
 
 /*---Stil på introduksjonsteksten---*/
-.intro-txt{
-  display:none;
+#introduction{
+  display:flex;
   flex-direction: column;
   font-size: auto;
   flex-wrap: wrap;
 }
-.overview{
+#overview{
   display:none;
   flex-direction: column;
   max-width:100%;
   white-space: pre-wrap;
 }
 
-.details{
-display:flex;
+#details{
+display:none;
 
 }
 
-
-.comparison{
+#comparison{
 display:none;
 }
 

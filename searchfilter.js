@@ -1,3 +1,4 @@
+// Funksjon for å filtrere søk basert på input 
 function searchFunction() {
   var input = document.getElementById("searchTerm");
   var filter = input.value.toUpperCase();

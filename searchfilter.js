@@ -2,7 +2,7 @@
 function searchFunction() {
   var input = document.getElementById("searchTerm");
   var filter = input.value.toUpperCase();
-  var table = document.getElementById("myTable");
+  var table = document.getElementsById("myTable");
   var tr = table.getElementsByTagName("tr");
   for (i = 1; i < tr.length; i++) {
     // Skjul rekke i starten

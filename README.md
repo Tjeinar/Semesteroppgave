@@ -6,8 +6,6 @@ I denne oppgaven skal vi lage et verktøy som viser data om norges befolkning.
 # TODO
 
 # Hovedinnhold: 
-- Skal i utgangspunktet ikke vise noen informasjon
-- Lage input felt for kommunenummer
 - Vise det samme som Oversikt gjør
 - Vise historisk utvikling i form av tabeller/lister for befolkning sysselsetting og utdanning.
 

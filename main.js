@@ -71,8 +71,3 @@ function fetch_data(data){
 fetch_data();
 
 //Funksjon for å lage tabell ut av formatert JSON-data
-
-
-function change_table(){
-
-}

@@ -42,47 +42,73 @@
         
               <!--Oversikt av kommunene ved hjelp av navn, kommunenumer og siste befolkningsmåling-->
               <div id="overview">
+                <table>
+                  <thead>
+                    <tr id="overview-name">
+                      <th>Kommunenavn</th>
+                    </tr>
+                    <tr id="overview-nr">
+                      <th>Kommmunenummer</th>
+                    </tr>
+                    <tr id ="overview-m">
+                      <th>Befolkning Menn(%)</th>
+                    </tr>
+                    <tr id = "overview-w">
+                      <th>Befolkning Kvinner(%)</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              
+              <div id="overview-mobile">
                   <table>
                       <thead>
-                        <th>Kom.navn</th>
-                        <th>Kom.nr</th>
-                        <th>Menn</th>
-                        <th>Kvinner</th>
+                        <th>Kommunenavn</th>
+                        <th>Kommunenummer</th>
+                        <th>Befolkning Menn(%)</th>
+                        <th>Befolkning Kvinner(%)</th>
                       </thead>
-                      <tbody id="commune-data"></tbody>
+                      <tbody id="overview-small-screen"></tbody>
                     </table>
               </div>
               
               <!--Lar brukeren skrive inn et kommunenummer og viser informasjon basert på dette-->
               <div id="details"><table>
                 <thead>
-                  <tr>
-                    <th>Kom.navn</th>
-                    <td>2</td>
+                  <tr id="details-name">
+                    <th>Kommunenavn</th>
                   </tr>
-                  <tr>
-                    <th>Kom.nr</th>
-                    <td>2</td>
+                  <tr id="details-nr">
+                    <th>Kommmunenummer</th>
                   </tr>
-                  <tr>
-                    <th>Menn</th>
-                    <td>2</td>
+                  <tr id ="details-m">
+                    <th>Befolkning Menn(%)</th>
                   </tr>
-                  <tr>
-                    <th>Kvinner</th>
-                    <td>2</td>
+                  <tr id = "details-w">
+                    <th>Befolkning Kvinner(%)</th>
                   </tr>
                 </thead>
-                <tbody id="commune-data-small-screen"></tbody>
+                <tbody></tbody>
               </table>
+            </div>
+
+
+            <div id="details-mobile">
+                <table>
+                    <thead>
+                      <th>Kommunenavn</th>
+                      <th>Kommunenummer</th>
+                      <th>Befolkning Menn(%)</th>
+                      <th>Befolkning Kvinner(%)</th>
+                    </thead>
+                    <tbody id="details-small-screen"></tbody>
+                  </table>
             </div>
               <!--Lar brukeren skrive inn to kommunummer og viser data for utvikling av sysselsettning.-->
               <div id="comparison">txt</div>
         </div>
-       </div>
-      </div>
-    </div>
-        </main>
+      </main>
         <!--Footer for nettstedet-->
         <footer class="footer">
           <p id="footer-text">Eksamensbesvarelse INFO134</p>

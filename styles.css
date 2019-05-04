@@ -12,7 +12,7 @@
 .menu li {
     display: flex;
     color: #ffffff;
-    padding: 10px 10px;
+    padding: 10px 2px;
     text-decoration: none;
     align-items: center;
     float:left;
@@ -29,6 +29,18 @@
     background-color: #111;
   }
 
+
+/*---Generell dokumentstil---*/
+*{
+  margin:0;
+}
+
+
+html, body{
+  height: 100%;
+  background-color: #f5f5f5;
+}
+
 input[type="button"]{
   display: flex;
   border: none;
@@ -37,30 +49,19 @@ input[type="button"]{
 }
   
 
-/*---Generell dokumentstil---*/
-html, body{
-  height: 100%;
-  margin: 0;
-  background-color: #f5f5f5;
-}
 
 /*---Hovedområde for presentasjon av innhold---*/
+
+/* Flex-box main */
 main{
   display:flex;
-  justify-content: center;
   flex-direction: column;
   padding:20px;
+  min-height: 100%
 }
 /*---Stil på lenker---*/
 .links, a, a:visited{
   text-decoration: none;
-}
-
-/*---flex-container for hovedinnhold---*/
-.flex-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center
 }
 
 /*---Stil på tabellen som holder dataen---*/
@@ -69,23 +70,27 @@ th, td, input{
 }
 
 table, th, td{
-  border: solid 1px #333;
+  border: solid 2px #333;
   border-collapse: collapse;
-  padding: 2px 3px;
+  padding: 5px 5px;
   text-align: center;
   min-width: 20%;
-  max-width: 50%;
-  white-space:pre-wrap;
+  max-width: 100%;
+  white-space:pre;
   table-layout:auto;
 }
 
 th{
-  font-size:10px;
+  font-size:13px;
   font-weight: bold;
 }
 
+tr :hover{
+  background:red;
+}
+
 td{
-font-size:15px
+font-size: auto;
 }
 
 
@@ -97,20 +102,37 @@ font-size:15px
   flex-wrap: wrap;
 }
 #overview{
-  display:none;
-  flex-direction: column;
+  display:flex;
+  flex-direction: row;
   max-width:100%;
   white-space: pre-wrap;
+  overflow-x: scroll;
+  overflow-y:scroll;
+}
+
+#overview-mobile{
+  display:flex;
+  overflow-x: scroll;
+  overflow-y: scroll;
 }
 
 #details{
-display:flex;
+display:none;
 flex-direction: row;
+overflow-x: scroll;
+overflow-y: scroll;
+}
 
+#details-mobile{
+  display:none;
+  overflow-x: scroll;
+  overflow-y: scroll;
 }
 
 #comparison{
 display:none;
+overflow-x: scroll;
+overflow-y: scroll;
 }
 
 /*---Footer---*/
@@ -129,3 +151,5 @@ display:none;
 #footer-text{
   margin:5px;
 }
+
+

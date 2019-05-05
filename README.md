@@ -8,6 +8,12 @@ I denne oppgaven skal vi lage et verktøy som viser data om norges befolkning.
 # Hovedinnhold: 
 - Vise historisk utvikling i form av tabeller/lister for befolkning sysselsetting og utdanning.
 
+##Details
+
+- Skal vise: Kommunenavn, Kommunenummer, siste målte befolkning, siste målte statistikk for sysselsetting og høyereutdanning (antall og prosent) 
+
+- Skal også vise: historisk utvikling i form av tabeller for sysselsetting, befolkning og utdanning
+
 ## Sammenligning
 - Skal i utgangspunktet ikke vise noen informasjon
 - Lage input felt for to gyldige kommunenummer
@@ -19,6 +25,13 @@ I denne oppgaven skal vi lage et verktøy som viser data om norges befolkning.
 - Ellers presentere data horisontalt
 
 # Data
+
+##Main.js
+
+- Fikse rad for befolkningsdata 
+- Prøve å lage en funksjon som kan finne tidligste dato i et datasett
+- Fikse sånn at begge tabellene blir lastet inn (details-small-screen)
+- Lage en sjekk på hvilket datasett som skal lages tabell av (hmm)
 
 
 # Rapport og øvrige filer

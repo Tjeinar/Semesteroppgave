@@ -103,7 +103,7 @@ font-size: auto;
 }
 /*  */
 #overview{
-  display:flex;
+  display:none;
   flex-direction: row;
   max-width:100%;
   white-space: pre-wrap;
@@ -129,10 +129,16 @@ overflow-y: scroll;
 
 /*  */
 #comparison{
-display:none;
+display:flex;
 overflow-x: scroll;
 overflow-y: scroll;
 }
+
+#comparison-mobile{
+    display:none;
+    overflow-y: scroll;
+    overflow-x: scroll;
+  }
 
 @media only screen and (max-width:550px) and (max-height:850px){
   #overview-mobile{
@@ -142,27 +148,18 @@ overflow-y: scroll;
     overflow-y: scroll;
   };
   #details-mobile{
-    display:flex;
+    display:none;
     overflow-x: scroll;
     overflow-y: scroll;
   };
 
-  #comparison-mobile{
-    display:none;
-    overflow-y: scroll;
-    overflow-x: scroll;
-  }
-
-  #comparison-table-1-mobile{
-    display:none
-  }
+  
+}
 
 /*---Footer---*/
 .footer{
   background-color: #333;
   color:#ffffff;
-  text-align:center;
-  position: sticky;
   bottom:0;
   width:100%;
   font-size:15px;

@@ -22,13 +22,17 @@
         <main class="main">
         <!--De ulike elementene som skal bli presentert, disse vil bli plassert og stylet ved hjelp av flexbox-css-->
           <div class= flex-container>
+             <!--Input-felt hvor brukeren kan søke på kommunenummer.-->
+             <div class="search">
+                <input type="text" id="searchTerm" onkeyup="searchFunction()" placeholder="Søk på kommune...">
+              </div>
               <!--Introduksjonen består av tekst som beskriver produktet vårt, lenker til SSB-sine offentlige nettsider, og en notis om mulig feil i datasett-->
-            <div class="introduction">
+            <div id="introduction">
             <!--Tekst for å introdusere brukeren til siden, og innholdet-->
             <article class="intro-txt">
               Dette nettstedet er laget for å presentere produktet vårt.<br><br>
               Produktet vårt er et verktøy for å vise data om Norges befolkning ved hjelp av data fra ssb.no <br><br>
-              OBS! Tallene kan inneholde feil, vi tar forbehold om avvik i dataen som blir presentert.<br><br> 
+              <p id="notice">OBS! Tallene kan inneholde feil, vi tar forbehold om avvik i dataen som blir presentert.</p><br><br> 
               
               <!--Lenker til datasettene som blir brukt og presentert på nettstedet-->
               Lenker til SSB-sine datasett:
@@ -39,28 +43,108 @@
               </ul>		
             </article>
           </div>
-        </div>
+        
               <!--Oversikt av kommunene ved hjelp av navn, kommunenumer og siste befolkningsmåling-->
-              <div class="overview">
+              <div id="overview">
+                <table>
+                  <thead>
+                    <tr id="overview-name">
+                      <th>Kommunenavn</th>
+                    </tr>
+                    <tr id="overview-nr">
+                      <th>Kommmunenummer</th>
+                    </tr>
+                    <tr id ="overview-m">
+                      <th>Befolkning Menn</th>
+                    </tr>
+                    <tr id = "overview-w">
+                      <th>Befolkning Kvinner</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              
+              <div id="overview-mobile">
                   <table>
                       <thead>
-                        <th>Kom.navn</th>
-                        <th>Kom.nr</th>
-                        <th>Menn</th>
-                        <th>Kvinner</th>
+                        <th>Kommunenavn</th>
+                        <th>Kommunenummer</th>
+                        <th>Befolkning Menn</th>
+                        <th>Befolkning Kvinner</th>
                       </thead>
-                      <tbody id="kommuner-data"></tbody>
+                      <tbody id="overview-small-screen"></tbody>
                     </table>
               </div>
               
               <!--Lar brukeren skrive inn et kommunenummer og viser informasjon basert på dette-->
-              <div class="details">txt</div>
+              <!-- TODO: Skal vise: Kommunenavn, Kommunenummer, siste målte befolkning, siste målte statistikk for sysselsetting og høyereutdanning (antall og prosent) -->
+              <div id="details"><table>
+                <thead>
+                  <tr id="details-name">
+                    <th>Kommunenavn</th>
+                  </tr>
+                  <tr id="details-nr">
+                    <th>Kommmunenummer</th>
+                  </tr>
+                  <tr id ="details-m">
+                    <th>Befolkning Menn(%)</th>
+                  </tr>
+                  <tr id = "details-w">
+                    <th>Befolkning Kvinner(%)</th>
+                  <!-- TODO: Skal også vise: historisk utvikling i form av tabeller for sysselsetting, befolkning og utdanning -->
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            <div id="details-mobile">
+                <table>
+                    <thead>
+                      <th>Kommunenavn</th>
+                      <th>Kommunenummer</th>
+                      <th>Befolkning Menn(%)</th>
+                      <th>Befolkning Kvinner(%)</th>
+                    </thead>
+                    <tbody id="details-small-screen"></tbody>
+                  </table>
+            </div>
               <!--Lar brukeren skrive inn to kommunummer og viser data for utvikling av sysselsettning.-->
-              <div class="comparison">txt</div>
+              <div id="comparison">
+                <div id="comparison-table-1">
+                  <thead>
+                    <tr id = "comparison-table-1-name"></tr>
+                    <th>Historisk utvikling for sysselsetting</th>
+                  </thead>
+                </div>
+                <div id="comparison-table-2">
+                  <thead>
+                    <tr id="comparison-table-2-name"></tr>
+                    <th>Historisk utvikling for sysselsetting</th>
+                  </thead>
+                </div>
+              </div>
+            <div id="comparison-mobile">
+              <div id="comparison-table-1-mobile">
+                  <table>
+                      <thead>
+                        <th>Historisk utvikling for sysselsetting</th>
+                      </thead>
+                      <tbody id="comparison-table-1-small-screen"></tbody>
+                    </table>
+              </div>
+
+              <div id="comparison-table-2-mobile">
+                  <table>
+                      <thead>
+                        <th>Historisk utvikling for sysselsetting</th>
+                      </thead>
+                      <tbody id="comparison-table-2-small-screen"></tbody>
+                    </table>
+              </div>
+          </div>
         </div>
-       </div>
-			</div>
-        </main>
+      </main>
         <!--Footer for nettstedet-->
         <footer class="footer">
           <p id="footer-text">Eksamensbesvarelse INFO134</p>

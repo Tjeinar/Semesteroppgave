@@ -6,78 +6,79 @@ function removeLoadingMessage() {
   //Enda mer drit her
 }
 
-function konstruktør(fil){
+function constructor(file){
   this.data = undefined;
   this.getNames = function() {
-    var liste = [];
-    for (f in this.data) {
-      liste.push(f);
+    var list = [];
+    for (var name in this.data){
+      list.push(name);
     }
-    return liste;
+    return list;
   };
   this.getIDs = function() {
-    var liste = [];
-    for (f in this.data) {
-      liste.push(this.data[f].kommunenummer);
+    var list = [];
+    for (var id in this.data) {
+      list.push(this.data[id].kommunenummer);
     }
-    return liste;
+    return list;
   };
-  this.getInfo = function(kn){
-    for (g in this.data) {
-      if (this.data[g].kommunenummer == kn){
-        console.log(g)
-        console.log(this.data[g]);
-      };
+  this.getInfo = function(kommunenummer){
+    for (var info in this.data) {
+      if (this.data[info].kommunenummer == kommunenummer){
+        console.log(info);
+        console.log(this.data[id]);
+      }
     }
   };
-  this.load = function hentData(kategori) {
-    var respons = undefined;
-    var htp = new XMLHttpRequest();
-    htp.open("GET", fil, true);
-    htp.onreadystatechange = function(callback) {
-      if (htp.readyState == 4 && htp.status == 200){
-        respons = JSON.parse(htp.responseText);
-        if (kategori == "befolk") {
-          for (i in respons.elementer) {
-            befolkning.data = respons.elementer;
-          }
-          befolkning.onload();
-        };
-        if (kategori == "syssels") {
-          for (i in respons.elementer) {
-            sysselsatte.data = respons.elementer;
-          }
-          sysselsatte.onload();
-        };
-        if (kategori == "utdan") {
-          for (i in respons.elementer) {
-            utdanning.data = respons.elementer;
-          }
-          utdanning.onload();
-        };
-      };
-    }
-    htp.send();
+  //Funksjon som tar inn en URL som argument og sender en forespørsel til nettadressen, og returnerer rådata, eller eventuelt returnerer en feilmelding. 
+  this.load = function fetch_data(category) {
+    var response = undefined;
+    //Definerer variabel for forespørsel-objektet
+    var xhr = new XMLHttpRequest();
+    //Sjekker om objektet har fått endret tilstand
+    xhr.onreadystatechange = function() {
+      //readystate(4) == DONE, dvs at forespørselen er ferdig
+      //status(200) == OK, dvs at forespørselen returnerte med OK
+      if (xhr.readyState == 4 && xhr.status == 200){
+      //Lagrer responen til variabel "response"
+        response = JSON.parse(xhr.responseText);
+      //Dersom parameteret gitt til funksjonen starter med befolking
+        if (category.startswith("befolk")) {
+          population.data = response.elementer;
+          population.onload();
+        }
+        if (category.startswith("syssels")) {
+          working_population.data = response.elementer;
+          working_population.onload();
+        }
+        if (category.startswith("utdann")) {
+          education.data = response.elementer;
+          education.onload();
+        }
+      }
+    };
+    xhr.open("GET", file, true);
+    xhr.send();
   };
 }
 
-var befolkning = new konstruktør("http://wildboy.uib.no/~tpe056/folk/104857.json");
-befolkning.onload = function() {
+var population = new constructor("http://wildboy.uib.no/~tpe056/folk/104857.json");
+population.onload = function() {
   enableNavigationButtons();
   removeLoadingMessage();
 };
-befolkning.load("befolk");
+population.load("befolk");
 
-var sysselsatte = new konstruktør("http://wildboy.uib.no/~tpe056/folk/100145.json");
-sysselsatte.onload = function() {
+var working_population = new constructor("http://wildboy.uib.no/~tpe056/folk/100145.json");
+working_population.onload = function() {
   enableNavigationButtons();
   removeLoadingMessage();
 };
-sysselsatte.load("syssels");
+working_population.load("syssels");
 
-var utdanning = new konstruktør("http://wildboy.uib.no/~tpe056/folk/85432.json");
-utdanning.onload = function() {
+var education = new constructor("http://wildboy.uib.no/~tpe056/folk/85432.json");
+education.onload = function() {
   enableNavigationButtons();
   removeLoadingMessage();
 };
-utdanning.load("utdan");
+education.load("utdan");

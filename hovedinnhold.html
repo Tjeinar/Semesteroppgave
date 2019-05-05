@@ -22,6 +22,10 @@
         <main class="main">
         <!--De ulike elementene som skal bli presentert, disse vil bli plassert og stylet ved hjelp av flexbox-css-->
           <div class= flex-container>
+             <!--Input-felt hvor brukeren kan søke på kommunenummer.-->
+             <div class="search">
+                <input type="text" id="searchTerm" onkeyup="searchFunction()" placeholder="Søk på kommune...">
+              </div>
               <!--Introduksjonen består av tekst som beskriver produktet vårt, lenker til SSB-sine offentlige nettsider, og en notis om mulig feil i datasett-->
             <div id="introduction">
             <!--Tekst for å introdusere brukeren til siden, og innholdet-->

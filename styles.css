@@ -54,6 +54,24 @@ main{
   /* Tvinger footer til å være på bunnen selv om det er lite innhold på siden  */
   min-height: 100%
 }
+
+/*-- Stil på searchbar --*/
+.search {
+  width: 20%;
+  position: relative;
+  display: flex;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#searchTerm {
+  width: 100%;
+  padding: 5px;
+  height: 20px;
+  outline: none;
+  color: #111;
+}
+
 /*---Stil på lenker---*/
 .links, a, a:visited{
   text-decoration: none;

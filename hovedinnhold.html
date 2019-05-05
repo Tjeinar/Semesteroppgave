@@ -28,7 +28,7 @@
             <article class="intro-txt">
               Dette nettstedet er laget for å presentere produktet vårt.<br><br>
               Produktet vårt er et verktøy for å vise data om Norges befolkning ved hjelp av data fra ssb.no <br><br>
-              OBS! Tallene kan inneholde feil, vi tar forbehold om avvik i dataen som blir presentert.<br><br> 
+              <p id="notice">OBS! Tallene kan inneholde feil, vi tar forbehold om avvik i dataen som blir presentert.</p><br><br> 
               
               <!--Lenker til datasettene som blir brukt og presentert på nettstedet-->
               Lenker til SSB-sine datasett:
@@ -51,10 +51,10 @@
                       <th>Kommmunenummer</th>
                     </tr>
                     <tr id ="overview-m">
-                      <th>Befolkning Menn(%)</th>
+                      <th>Befolkning Menn</th>
                     </tr>
                     <tr id = "overview-w">
-                      <th>Befolkning Kvinner(%)</th>
+                      <th>Befolkning Kvinner</th>
                     </tr>
                   </thead>
                   <tbody></tbody>
@@ -66,14 +66,15 @@
                       <thead>
                         <th>Kommunenavn</th>
                         <th>Kommunenummer</th>
-                        <th>Befolkning Menn(%)</th>
-                        <th>Befolkning Kvinner(%)</th>
+                        <th>Befolkning Menn</th>
+                        <th>Befolkning Kvinner</th>
                       </thead>
                       <tbody id="overview-small-screen"></tbody>
                     </table>
               </div>
               
               <!--Lar brukeren skrive inn et kommunenummer og viser informasjon basert på dette-->
+              <!-- TODO: Skal vise: Kommunenavn, Kommunenummer, siste målte befolkning, siste målte statistikk for sysselsetting og høyereutdanning (antall og prosent) -->
               <div id="details"><table>
                 <thead>
                   <tr id="details-name">
@@ -87,6 +88,7 @@
                   </tr>
                   <tr id = "details-w">
                     <th>Befolkning Kvinner(%)</th>
+                  <!-- TODO: Skal også vise: historisk utvikling i form av tabeller for sysselsetting, befolkning og utdanning -->
                   </tr>
                 </thead>
                 <tbody></tbody>
@@ -106,8 +108,40 @@
                   </table>
             </div>
               <!--Lar brukeren skrive inn to kommunummer og viser data for utvikling av sysselsettning.-->
-              <div id="comparison">txt</div>
+              <div id="comparison">
+              <div id="comparison-table-1">
+                <thead>
+                  <tr id = "comparison-table-1-name"></tr>
+                  <th>Historisk utvikling for sysselsetting</th>
+                </thead>
+
+                <div id="comparison-table-2">
+                    <thead>
+                      <tr id="comparison-table-2-name"></tr>
+                      <th>Historisk utvikling for sysselsetting</th>
+                    </thead>
+              </div>
+            <div id="comparison-mobile">
+              <div id="comparison-table-1-mobile">
+                  <table>
+                      <thead>
+                        <th>Historisk utvikling for sysselsetting</th>
+                      </thead>
+                      <tbody id="comparison-table-1-small-screen"></tbody>
+                    </table>
+              </div>
+
+              <div id="comparison-table-2-mobile">
+                  <table>
+                      <thead>
+                        <th>Historisk utvikling for sysselsetting</th>
+                      </thead>
+                      <tbody id="comparison-table-2-small-screen"></tbody>
+                    </table>
+              </div>
+          </div>
         </div>
+      </div>
       </main>
         <!--Footer for nettstedet-->
         <footer class="footer">

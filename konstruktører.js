@@ -6,25 +6,25 @@ function removeLoadingMessage() {
   //Enda mer drit her
 }
 
-function konstruktør(fil){
+function constructor(file){
   this.data = undefined;
   this.getNames = function() {
-    var liste = [];
+    var list = [];
     for (var name in this.data){
-      liste.push(name);
+      list.push(name);
     }
-    return liste;
+    return list;
   };
   this.getIDs = function() {
-    var liste = [];
+    var list = [];
     for (var id in this.data) {
-      liste.push(this.data[id].kommunenummer);
+      list.push(this.data[id].kommunenummer);
     }
-    return liste;
+    return list;
   };
-  this.getInfo = function(kn){
+  this.getInfo = function(kommunenummer){
     for (var info in this.data) {
-      if (this.data[info].kommunenummer == kn){
+      if (this.data[info].kommunenummer == kommunenummer){
         console.log(info);
         console.log(this.data[id]);
       }
@@ -34,22 +34,22 @@ function konstruktør(fil){
   this.load = function fetch_data(category) {
     var response = undefined;
     //Definerer variabel for forespørsel-objektet
-    var htp = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
     //Sjekker om objektet har fått endret tilstand
-    htp.onreadystatechange = function() {
+    xhr.onreadystatechange = function() {
       //readystate(4) == DONE, dvs at forespørselen er ferdig
       //status(200) == OK, dvs at forespørselen returnerte med OK
-      if (htp.readyState == 4 && htp.status == 200){
+      if (xhr.readyState == 4 && xhr.status == 200){
       //Lagrer responen til variabel "response"
-        response = JSON.parse(htp.responseText);
+        response = JSON.parse(xhr.responseText);
       //Dersom parameteret gitt til funksjonen starter med befolking
         if (category.startswith("befolk")) {
           population.data = response.elementer;
           population.onload();
         }
         if (category.startswith("syssels")) {
-          working.data = response.elementer;
-          working.onload();
+          working_population.data = response.elementer;
+          working_population.onload();
         }
         if (category.startswith("utdann")) {
           education.data = response.elementer;
@@ -57,26 +57,26 @@ function konstruktør(fil){
         }
       }
     };
-    htp.open("GET", fil, true);
-    htp.send();
+    xhr.open("GET", file, true);
+    xhr.send();
   };
 }
 
-var population = new konstruktør("http://wildboy.uib.no/~tpe056/folk/104857.json");
+var population = new constructor("http://wildboy.uib.no/~tpe056/folk/104857.json");
 population.onload = function() {
   enableNavigationButtons();
   removeLoadingMessage();
 };
 population.load("befolk");
 
-var working = new konstruktør("http://wildboy.uib.no/~tpe056/folk/100145.json");
-working.onload = function() {
+var working_population = new constructor("http://wildboy.uib.no/~tpe056/folk/100145.json");
+working_population.onload = function() {
   enableNavigationButtons();
   removeLoadingMessage();
 };
-working.load("syssels");
+working_population.load("syssels");
 
-var education = new konstruktør("http://wildboy.uib.no/~tpe056/folk/85432.json");
+var education = new constructor("http://wildboy.uib.no/~tpe056/folk/85432.json");
 education.onload = function() {
   enableNavigationButtons();
   removeLoadingMessage();

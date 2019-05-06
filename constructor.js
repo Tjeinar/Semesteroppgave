@@ -82,3 +82,28 @@ education.onload = function() {
   removeLoadingMessage();
 };
 education.load("utdan");
+
+
+
+function displayDiv(id) {
+  var diven = document.getElementsByClassName(id);
+    for(var i = 0; i < diven.length; i++){
+        diven[i].style.display = "initial";
+    }
+}
+
+function hideDiv(id1, id2, id3) {
+  var div1 = document.getElementsByClassName(id1);
+  var div2 = document.getElementsByClassName(id2);
+  var div3 = document.getElementsByClassName(id3);
+  for(var i = 0; i < div1.length; i++){
+      div1[i].style.display = "none";
+  }
+  for(var i = 0; i < div2.length; i++){
+      div2[i].style.display = "none";
+  }
+  for(var i = 0; i < div3.length; i++){
+      div3[i].style.display = "none";
+  }
+}
+

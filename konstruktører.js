@@ -1,4 +1,3 @@
-<<<<<<< HEAD:konstruktører.js
 function enableNavigationButtons() {
   //Noe drit her
 }
@@ -83,7 +82,7 @@ education.onload = function() {
   removeLoadingMessage();
 };
 education.load("utdan");
-=======
+
 function enableNavigationButtons() {
   //Noe drit her
 }
@@ -192,5 +191,3 @@ function hideDiv(id1, id2, id3) {
       div3[i].style.display = "none";
   }
 }
-
->>>>>>> 3a4e48bf85ace4d5dc9b94ab92a78f786723f9f1:constructor.js

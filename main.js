@@ -24,7 +24,6 @@ function find_lastest_date(commune_data){
     console.log(date_list);
 }
 
-
 function add_vertical_row(name, commune_data){
     var row = 
         `<td>${name}</td>
@@ -61,30 +60,90 @@ function add_horizontal_row(name, commune_data){
     document.getElementById("overview-w").append(child_4);
 }
 
-//Funksjon som tar inn en URL som argument og sender en forespørsel til nettadressen, og returnerer rådata, eller eventuelt returnerer en feilmelding. 
-function fetch_data(data){
-    bf_data = "http://wildboy.uib.no/~tpe056/folk/104857.json";
-    //Definerer variabel for request-objektet
-    var xhr = new XMLHttpRequest();
-    //Sjekker om objektet har fått endret "state"
-    xhr.onreadystatechange = function(){
-        //readystate(4) == DONE, dvs at forespørselen er ferdig
-        //status(200) == OK, dvs at forespørselen returnerte med OK 
-        if(this.readyState == 4 && this.status == 200){
-        //Lagrer responsen til variabel "data"
-        var data = xhr.responseText;
-        var parsed_data = JSON.parse(data);
-        var communes = parsed_data.elementer;
+function enableNavigationButtons() {
+    //Noe drit her
+  }
+  
+  function removeLoadingMessage() {
+    //Enda mer drit her
+  }
 
-        Object.keys(communes).forEach(function(commune, index){
-            var commune_name = Object.keys(communes)[index];
-            var commune_object = communes[commune];
-            add_vertical_row(commune_name, commune_object);
-            add_horizontal_row(commune_name, commune_object);
-        });
-        }
+//Konstruktør
+  
+  function constructor(file){
+    this.data = undefined;
+    this.getNames = function() {
+      var list = [];
+      for (var name in this.data){
+        list.push(name);
+      }
+      return list;
     };
-    xhr.open("GET", bf_data , true);
-    xhr.send();
-    }
-fetch_data();
+    this.getIDs = function() {
+      var list = [];
+      for (var id in this.data) {
+        list.push(this.data[id].kommunenummer);
+      }
+      return list;
+    };
+    this.getInfo = function(kommunenummer){
+      for (var info in this.data) {
+        if (this.data[info].kommunenummer == kommunenummer){
+          console.log(info);
+          console.log(this.data[id]);
+        }
+      }
+    };
+    //Funksjon som tar inn en URL som argument og sender en forespørsel til nettadressen, og returnerer rådata, eller eventuelt returnerer en feilmelding. 
+    this.load = function fetch_data(category) {
+      var response = undefined;
+      //Definerer variabel for forespørsel-objektet
+      var xhr = new XMLHttpRequest();
+      //Sjekker om objektet har fått endret tilstand
+      xhr.onreadystatechange = function() {
+        //readystate(4) == DONE, dvs at forespørselen er ferdig
+        //status(200) == OK, dvs at forespørselen returnerte med OK
+        if (xhr.readyState == 4 && xhr.status == 200){
+        //Lagrer responen til variabel "response"
+          response = JSON.parse(xhr.responseText);
+        //Dersom parameteret gitt til funksjonen starter med befolking
+          if (category.startswith("befolk")) {
+            population.data = response.elementer;
+            population.onload();
+          }
+          if (category.startswith("syssels")) {
+            working_population.data = response.elementer;
+            working_population.onload();
+          }
+          if (category.startswith("utdann")) {
+            education.data = response.elementer;
+            education.onload();
+          }
+        }
+      };
+      xhr.open("GET", file, true);
+      xhr.send();
+    };
+  }
+  
+  var population = new constructor("http://wildboy.uib.no/~tpe056/folk/104857.json");
+  population.onload = function() {
+    enableNavigationButtons();
+    removeLoadingMessage();
+  };
+  population.load("befolk");
+  
+  var working_population = new constructor("http://wildboy.uib.no/~tpe056/folk/100145.json");
+  working_population.onload = function() {
+    enableNavigationButtons();
+    removeLoadingMessage();
+  };
+  working_population.load("syssels");
+  
+  var education = new constructor("http://wildboy.uib.no/~tpe056/folk/85432.json");
+  education.onload = function() {
+    enableNavigationButtons();
+    removeLoadingMessage();
+  };
+  education.load("utdan");
+  

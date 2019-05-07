@@ -106,3 +106,16 @@ function hideDiv(id1, id2, id3) {
       div3[i].style.display = "none";
   }
 }
+
+//Funksjon for å skjule/vise div elementer via navbar. 
+function showHide(target){
+  var targetdiv = document.getElementById(target);  
+  var divs = document.getElementsByClassName('content');
+  var visible = targetdiv.style.display=='flex';  
+  for(var i=0;i<divs.length;i++){
+     divs[i].style.display = 'none';
+  }
+  //Gjør den valgte div synlig
+  targetdiv.style.display = visible?'none':'flex';  
+  return false;
+}

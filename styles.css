@@ -109,7 +109,7 @@ font-size: auto;
 
 /*---Stil på introduksjonsteksten---*/
 #introduction{
-  display:none;
+  display:flex;
   flex-direction: row;
   font-size: auto;
   flex-wrap: wrap;
@@ -144,7 +144,7 @@ overflow-y: scroll;
 
 /*  */
 #comparison{
-display:flex;
+display:none;
 flex-wrap:wrap;
 }
 
@@ -161,6 +161,13 @@ overflow:scroll;
 #comparison-mobile{
     display:flex;
     margin-top:20px;
+display:none;
+overflow-x: scroll;
+overflow-y: scroll;
+}
+
+#comparison-mobile{
+    display:none;
     overflow-y: scroll;
     overflow-x: scroll;
     flex-direction: row;

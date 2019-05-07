@@ -101,7 +101,12 @@ function hideDiv(id1, id2, id3) {
 }
 
 
+
 function befolkningTabell(iden) {
+  var overskr = document.createElement("H2");
+  overskr.innerHTML = "Befolkning";
+  document.getElementById("befolkede").appendChild(overskr);
+
   var be = befolkning.getInfo(iden); //Henter informasjon fra onstruktøren
 
   var x = document.createElement("TABLE"); //Oppretter en tabell
@@ -132,6 +137,10 @@ function befolkningTabell(iden) {
 }
 
 function sysselsatteTabell(iden) {
+  var overskr = document.createElement("H2");
+  overskr.innerHTML = "Sysselsatte";
+  document.getElementById("sysselsetting").appendChild(overskr);
+
   var sy = sysselsatte.getInfo(iden); //Henter informasjon om sysselsetting om den gitte byen
 
   var x = document.createElement("TABLE"); //Oppretter en tabbell
@@ -162,6 +171,10 @@ function sysselsatteTabell(iden) {
 }
 
 function utdanningTabell(iden) {
+  var overskr = document.createElement("H2");
+  overskr.innerHTML = "Utdanning";
+  document.getElementById("utdannede").appendChild(overskr);
+
   var ut = utdanning.getInfo(iden); //Henter informasjon om utdanning fra gitte byen
 
   var x = document.createElement("TABLE"); //Lager en tabell
@@ -211,10 +224,16 @@ function nuSkjerDet(){
   document.getElementById("befolkede").innerHTML = ""; //Tømmer diven slik at den er klar for ny tabell
   document.getElementById("sysselsetting").innerHTML = ""; //Tømmer diven slik at den er klar for ny tabell
   document.getElementById("utdannede").innerHTML = ""; //Tømmer diven slik at den er klar for ny tabell
-  var nummer = document.getElementById("IDen_til_søkefelten_hvor_kommunenummeret_står").value; //Nummer er den id'en som bruker vil få info om
-  nummer = String(nummer); //Forsikrer meg om at id'en går som tekstverdi
-  befolkningTabell(nummer); //Henter tabell om befolkningen til den byen
-  sysselsatteTabell(nummer); //Henter tabell om sysselsetting til den byen
-  utdanningTabell(nummer);//Henter tabell om utdanning til den byen
+  var nummer = document.getElementById("byenNummer").value; //Nummer er den id'en som bruker vil få info om
+  if (Number(nummer) in befolkning.getIDs()) {
+    nummer = String(nummer); //Gjør id'en til tekstverdi
+    befolkningTabell(nummer); //Henter tabell om befolkningen til den byen
+    sysselsatteTabell(nummer); //Henter tabell om sysselsetting til den byen
+    utdanningTabell(nummer);//Henter tabell om utdanning til den byen
+  }
+  else{
+    var overskr = document.createElement("H2");
+    overskr.innerHTML = "Det finnes ingen by med det kommunenummeret";
+    document.getElementById("befolkede").appendChild(overskr);
+  };
 }
-

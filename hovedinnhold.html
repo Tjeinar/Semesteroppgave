@@ -28,6 +28,9 @@
              <div class="search">
                 <input type="text" id="searchTerm" onkeyup="searchFunction()" placeholder="Søk på kommune...">
               </div>
+
+              <input type="text" placeholder="kommunenummer..">
+              <input type="text" placeholder="kommunenummer..">
               <!--Introduksjonen består av tekst som beskriver produktet vårt, lenker til SSB-sine offentlige nettsider, og en notis om mulig feil i datasett-->
             <div id="introduction">
             <!--Tekst for å introdusere brukeren til siden, og innholdet-->
@@ -80,55 +83,51 @@
               </div>
               
               <!--Lar brukeren skrive inn et kommunenummer og viser informasjon basert på dette-->
-              <div id="details"><table>
-                <thead>
-                  <tr id="details-name">
-                    <th>Kommunenavn</th>
-                  </tr>
-                  <tr id="details-nr">
-                    <th>Kommmunenummer</th>
-                  </tr>
-                  <tr id ="details-m">
-                    <th>Befolkning Menn(%)</th>
-                  </tr>
-                  <tr id = "details-w">
-                    <th>Befolkning Kvinner(%)</th>
-                  </tr>
-                </thead>
-                <tbody></tbody>
-              </table>
-            </div>
-            <div id="details-mobile">
-                <table>
-                    <thead>
-                      <th>Kommunenavn</th>
-                      <th>Kommunenummer</th>
-                      <th>Befolkning Menn(%)</th>
-                      <th>Befolkning Kvinner(%)</th>
-                    </thead>
-                    <tbody id="details-small-screen"></tbody>
-                  </table>
-            </div>
+              <div id="details">
+            
+              </div>
               <!--Lar brukeren skrive inn to kommunummer og viser data for utvikling av sysselsettning.-->
+              
+
               <div id="comparison">
                 <div id="comparison-table-1">
-                  <thead>
-                    <tr id = "comparison-table-1-name"></tr>
-                    <th>Historisk utvikling for sysselsetting</th>
-                  </thead>
-                </div>
-                <div id="comparison-table-2">
-                  <thead>
-                    <tr id="comparison-table-2-name"></tr>
-                    <th>Historisk utvikling for sysselsetting</th>
-                  </thead>
-                </div>
+                    <table>
+                      <thead>
+                        <tr id="comparison-table-1-name">
+                          <th>Eksempelkommune</th>
+                          <th>Historisk utvikling for sysselsetting</th>
+                          <tr><td>Årstall</td></tr>
+                     
+                        </tr>
+                      </thead>
+                      <tbody></tbody>
+                    </table>
+                  </div>
+                  
+                  <div id="comparison-table-2">
+                      <table>
+                        <thead>
+                          <tr id="comparison-table-2-name">
+                            <th>Eksempelkommune</th>
+                            <th>Historisk utvikling for sysselsetting</th>
+                            <td>Årstall</td>
+
+                          </tr>        
+                        </thead>
+                        <tbody></tbody>
+                      </table>
+                    </div>
+             
+            </div>
+              <!-- flex-container div -->
               </div>
             <div id="comparison-mobile">
               <div id="comparison-table-1-mobile">
                   <table>
                       <thead>
                         <th>Historisk utvikling for sysselsetting</th>
+                      <tr><td>Årstall</td><td>Innbyggetall</td></tr>
+                      
                       </thead>
                       <tbody id="comparison-table-1-small-screen"></tbody>
                     </table>
@@ -138,6 +137,7 @@
                   <table>
                       <thead>
                         <th>Historisk utvikling for sysselsetting</th>
+                        <tr><td>Årstall</td><td>Innbyggertall</td></tr>
                       </thead>
                       <tbody id="comparison-table-2-small-screen"></tbody>
                     </table>

@@ -38,7 +38,7 @@ function constructor(file){
     //Sjekker om objektet har fått endret tilstand
     xhr.onreadystatechange = function() {
       //readystate(4) == DONE, dvs at forespørselen er ferdig
-      //status(200) == OK, dvs at forespørselen returnerte med OK
+      //status(200) == OK, dvs at forespørselen returnerte objektet, og en statusmelding(OK)
       if (xhr.readyState == 4 && xhr.status == 200){
       //Lagrer responen til variabel "response"
         response = JSON.parse(xhr.responseText);

@@ -1,28 +1,40 @@
 <!DOCTYPE html>
-<html lang="NB">
+<!-- html lang blir satt til nb slik at nettlesere skal oppfatte at teksten presentert på nettstedet er skrevet på Norsk bokmål-->
+<html lang="nb">
   <head>
+    <!-- Tegnkoding settes til UTF-8 for å kunne støtte en rekke språk -->
     <meta charset="UTF-8">
+    <!-- <Meta> gir i dette tilfellet nettleseren instruksjoner på hvordan den skal kontrollere nettsidens dimensjoner og skalering  -->
+    <!-- width=device-width gjør slik at bredden på siden blir tilpasset til enheten -->
+    <!-- initial-scale=1.0 bestemmer i hvilken grad innholdet på nettsiden skal forstørres når en først blir lastet inn -->
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="description here">
-    <link rel="stylesheet" href="styles.css" type="text/css">
-    <script src="main.js"></script>
-    <script src="konstruktører.js"></script>
-    <script src="searchfilter.js"></script>
+    <!-- Denne delen identifiserer vårt css-dokument som et stilark, henviser til plasseringen av dokumentet og stadfester hva filen består av -->
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <!-- Javascript-dokument -->
+    <script src="javascript/main.js"></script>
+    <script src="javascript/konstruktører.js"></script>
+    <!-- Javascript for søkefunksjonen -->
+    <script src="javascript/searchfilter.js"></script>
     <title>Tall over norges befolkning</title>
   </head>
   <body>
-    <!--Navigasjon for det forskjellige innholdet sok skal presenters-->
+    <!--Navigasjonsmeny-->
         <nav class ="menu">
           <ul>
+            <!-- Knapp for å vise Introduksjon og introduksjonstekst -->
             <li><input type = "button" value="Introduksjon" onclick="showHide('introduction');"></li>
+            <!-- Knapp for å vise Oversikt -->
             <li><input type = "button" value="Oversikt" onclick="showHide('overview');"></li>
+            <!-- Knapp for å vise Detaljer -->
             <li><input type = "button" value="Detaljer" onclick="showHide('details');"></li>
+            <!-- Knapp for å vise Sammenligning -->
             <li><input type = "button" value="Sammenligning"onclick="showHide('comparison');"></li>
+            <!-- I forbindelse med å skjule/hente frem innholdet i hvert av disse fire blokkelementene tar vi i bruk en fuksjon med navn showHide, denne ligger i main.js -->
           </ul>
         </nav>
-        <!--Hoveddelen til nettstedet-->
+        <!--Ytterste wrapper til nettstedet-->
         <main class="main">
-        <!--De ulike elementene som skal bli presentert, disse vil bli plassert og stylet ved hjelp av flexbox-css-->
+        <!-- Wrapper for de fire ulike elementene som skal presenteres på nettstedet -->
           <div class= flex-container>
               <input type="text" placeholder="kommunenummer..">
               <input type="text" placeholder="kommunenummer..">
@@ -37,6 +49,7 @@
             <article class="intro-txt">
               Dette nettstedet er laget for å presentere produktet vårt.<br><br>
               Produktet vårt er et verktøy for å vise data om Norges befolkning ved hjelp av data fra ssb.no <br><br>
+              <!-- Notis angående data som blir presentert -->
               <p id="notice">OBS! Tallene kan inneholde feil, vi tar forbehold om avvik i dataen som blir presentert.</p><br><br> 
               
               <!--Lenker til datasettene som blir brukt og presentert på nettstedet-->
@@ -117,33 +130,9 @@
                         <tbody></tbody>
                       </table>
                     </div>
-             
-            </div>
-              <!-- flex-container div -->
               </div>
-            <div id="comparison-mobile">
-              <div id="comparison-table-1-mobile">
-                  <table>
-                      <thead>
-                        <th>Historisk utvikling for sysselsetting</th>
-                      <tr><td>Årstall</td><td>Innbyggetall</td></tr>
-                      
-                      </thead>
-                      <tbody id="comparison-table-1-small-screen"></tbody>
-                    </table>
-              </div>
-
-              <div id="comparison-table-2-mobile">
-                  <table>
-                      <thead>
-                        <th>Historisk utvikling for sysselsetting</th>
-                        <tr><td>Årstall</td><td>Innbyggertall</td></tr>
-                      </thead>
-                      <tbody id="comparison-table-2-small-screen"></tbody>
-                    </table>
-              </div>
+            <!-- flex-container div -->
           </div>
-        </div>
       </main>
         <!--Footer for nettstedet-->
         <footer class="footer">

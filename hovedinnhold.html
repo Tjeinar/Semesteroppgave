@@ -14,22 +14,23 @@
     <!--Navigasjon for det forskjellige innholdet sok skal presenters-->
         <nav class ="menu">
           <ul>
-            <li><input type = "button" value="Introduksjon" onclick=""></li>
-            <li><input type = "button" value="Oversikt" onclick=""></li>
-            <li><input type = "button" value="Detaljer" onclick=""></li>
-            <li><input type = "button" value="Sammenligning"onclick=""></li>
+            <li><input type = "button" value="Introduksjon" onclick="showHide('introduction');"></li>
+            <li><input type = "button" value="Oversikt" onclick="showHide('overview');"></li>
+            <li><input type = "button" value="Detaljer" onclick="showHide('details');"></li>
+            <li><input type = "button" value="Sammenligning"onclick="showHide('comparison');"></li>
           </ul>
         </nav>
         <!--Hoveddelen til nettstedet-->
         <main class="main">
         <!--De ulike elementene som skal bli presentert, disse vil bli plassert og stylet ved hjelp av flexbox-css-->
           <div class= flex-container>
-             <!--Input-felt hvor brukeren kan søke på kommunenummer.-->
-             <div class="search">
-                <input type="text" id="searchTerm" onkeyup="searchFunction()" placeholder="Søk på kommune...">
-              </div>
+            <!--Input-felt hvor brukeren kan søke på kommunenummer.-->
+            <div class="search">
+              <input type="text" id="searchTerm" onkeyup="searchFunction()" placeholder="Søk på kommune...">
+            </div>
+            
               <!--Introduksjonen består av tekst som beskriver produktet vårt, lenker til SSB-sine offentlige nettsider, og en notis om mulig feil i datasett-->
-            <div id="introduction">
+            <div id="introduction" class="content">
             <!--Tekst for å introdusere brukeren til siden, og innholdet-->
             <article class="intro-txt">
               Dette nettstedet er laget for å presentere produktet vårt.<br><br>
@@ -47,7 +48,7 @@
           </div>
         
               <!--Oversikt av kommunene ved hjelp av navn, kommunenumer og siste befolkningsmåling-->
-              <div id="overview">
+              <div  id="overview" class="content" >
                 <table>
                   <thead>
                     <tr id="overview-name">
@@ -80,7 +81,7 @@
               </div>
               
               <!--Lar brukeren skrive inn et kommunenummer og viser informasjon basert på dette-->
-              <div id="details"><table>
+              <div id="details" class="content"><table>
                 <thead>
                   <tr id="details-name">
                     <th>Kommunenavn</th>
@@ -110,7 +111,7 @@
                   </table>
             </div>
               <!--Lar brukeren skrive inn to kommunummer og viser data for utvikling av sysselsettning.-->
-              <div id="comparison">
+              <div id="comparison" class="content">
                 <div id="comparison-table-1">
                   <thead>
                     <tr id = "comparison-table-1-name"></tr>

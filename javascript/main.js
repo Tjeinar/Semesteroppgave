@@ -340,15 +340,15 @@ function sammenlignByer() {
 
 function heiaBrann() {
   document.getElementById("sammenlignelser").innerHTML = "";
-  var nummerEn = nummerSkjekk(document.getElementById("sammenlikneNummer1").value);
-  var nummerTo = nummerSkjekk(document.getElementById("sammenlikneNummer2").value);
+  var nummerEn = nummerSkjekk(document.getElementById("sammenligneNummer1").value);
+  var nummerTo = nummerSkjekk(document.getElementById("sammenligneNummer2").value);
   if (nummerEn && nummerTo == true){
-    sammenliknByer();
+    sammenlignByer();
   }
   else {
     var h = document.createElement("H2");
     var t = document.createTextNode("Nummrene er ikke et kommunenummer");
     h.appendChild(t);
-    document.getElementById("sammenliknelser").appendChild(h);
+    document.getElementById("sammenlignelser").appendChild(h);
   }
 }

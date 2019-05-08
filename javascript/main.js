@@ -138,12 +138,12 @@ function leggTilInfoIRaden(id, data) {
 
 //Denne funksjonen sjekker om nummer er gyldig
 function nummerSkjekk(nummer) {
-  if (nummer.length == 4) {
-    if (Number(nummer) in befolkning.getIDs()) {
-      return true;
-    }
+ if (befolkning.getInfo(nummer) == undefined) {
+    return false;
+  }
+  else {
+    return true;
   };
-  return false;
 }
 
 function oversiktTabell() {

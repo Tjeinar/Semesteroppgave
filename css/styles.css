@@ -14,7 +14,6 @@
 .menu li {
     display: flex;
     color: #ffffff;
-    padding: 10px 2px;
     text-decoration: none;
     align-items: center;
     float:left;
@@ -24,6 +23,22 @@
 .menu li:hover {
     background-color: #111;
   }
+/* Gjør at teksten passer på veldig små skjermer */
+@media only screen and (max-width: 350px){
+  input[type="button"]{
+    font-size:10px;
+  }
+}
+
+/* Stil på knapper generelt */
+input[type="button"]{
+  display: flex;
+  border: none;
+  background: none;
+  color:white;
+  padding:10px;
+  cursor:pointer;
+}
   
 /*---Generell dokumentstil---*/
 *{
@@ -36,13 +51,7 @@ html, body{
   background-color: #f5f5f5;
 }
 
-/* Stil på knapper generelt */
-input[type="button"]{
-  display: flex;
-  border: none;
-  background: none;
-  color:white;
-}
+
 
 /*---Hovedområde for presentasjon av innhold---*/
 

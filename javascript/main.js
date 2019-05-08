@@ -59,16 +59,20 @@ function konstruktør(fil){
       }
     }
   };
-  this.load = function(kategori) { //denne funksjonen sender forespørsel om å laste ned datasettet.
+  this.load = function(kategori) { 
+    //denne funksjonen sender forespørsel om å laste ned datasettet.
     var respons = undefined;
     var htp = new XMLHttpRequest();
     htp.open("GET", fil, true);
     htp.onreadystatechange = function() {
       if (htp.readyState == 4 && htp.status == 200){
         respons = JSON.parse(htp.responseText);
-        if (kategori == "befolk") { //kategori avgjør hvilke objektet som skal få datasettet
-          befolkning.data = respons.elementer; // datasetter blir så lagt til i data til objektet
-          befolkning.onload(); // kaller på onload-funksjonen som man skulle.
+        //kategori avgjør hvilke objektet som skal få datasettet
+        if (kategori == "befolk") { 
+          // datasetter blir så lagt til i data til objektet
+          befolkning.data = respons.elementer; 
+          // kaller på onload-funksjonen som man skulle.s
+          befolkning.onload(); 
         }
         if (kategori == "syssels") {
           sysselsatte.data = respons.elementer;
@@ -137,12 +141,15 @@ function befolkningTabell(iden) {
   overskr.innerHTML = "Befolkning";
   document.getElementById("befolkede").appendChild(overskr);
 
-  var be = befolkning.getInfo(iden); //Henter informasjon om den kommunen
+  //Henter informasjon om den kommunen
+  var be = befolkning.getInfo(iden); 
 
-  var x = document.createElement("TABLE"); //Oppretter en tabell
-  x.setAttribute("id", "myTable"); //Gir den ID : MyTable
-  document.getElementById("befolkede").appendChild(x); //Legger tabellen til befolkede-diven
-
+  //Oppretter en tabell
+  var x = document.createElement("TABLE"); 
+  //Gir den ID : MyTable
+  x.setAttribute("id", "myTable"); 
+  //Legger tabellen til befolkede-diven
+  document.getElementById("befolkede").appendChild(x);
   lagEnRad("myTable", "år", "År");
   lagEnRad("myTable", "antall", "Antall");
 
@@ -162,9 +169,11 @@ function sysselsatteTabell(iden) {
   overskr.innerHTML = "Sysselsatte";
   document.getElementById("sysselsetting").appendChild(overskr);
 
-  var sy = sysselsatte.getInfo(iden); //Henter informasjon om sysselsetting om den gitte byen
+  //Henter informasjon om sysselsetting om den gitte byen
+  var sy = sysselsatte.getInfo(iden); 
 
-  var x = document.createElement("TABLE"); //Oppretter en tabbell
+  //Oppretter en tabell
+  var x = document.createElement("TABLE"); 
   x.setAttribute("id", "myTable2");
   document.getElementById("sysselsetting").appendChild(x);
 
@@ -190,20 +199,24 @@ function utdanningTabell(iden) {
   overskr.innerHTML = "Utdanning";
   document.getElementById("utdannede").appendChild(overskr);
 
-  var ut = utdanning.getInfo(iden); //Henter informasjon om utdanning fra gitte byen
+  //Henter informasjon om utdanning fra gitte byen
+  var ut = utdanning.getInfo(iden); 
 
-  var x = document.createElement("TABLE"); //Lager en tabell
+  //Lager en tabell
+  var x = document.createElement("TABLE"); 
   x.setAttribute("id", "myTable3");
   document.getElementById("utdannede").appendChild(x);
 
-  lagEnRad("myTable3", "åra", "Utdanninger/År"); //Den første cellen i raden blir Utdanning/År
+  //Den første cellen i raden blir Utdanning/År
+  lagEnRad("myTable3", "åra", "Utdanninger/År"); 
 
   for (var u in ut.data["11"].Menn) {
     //Går gjennom hvert år
     leggTilInfoIRaden("åra", u);
   }
 
-  var utdanninger = ["11", "01", "02a", "03a", "04a", "09a"]; //Lager en variabel med alle de mulige utdanningene
+  //Lager en variabel med alle de mulige utdanningene
+  var utdanninger = ["11", "01", "02a", "03a", "04a", "09a"]; 
   for (var i = 1; i < 7; i++) {
     //Lager en loop som gåes gjennom 6 ganger
     var id = "antallene" + i; //Oppretter forskjellige ider for hver loop, antallene1, antallene2 osv...
@@ -214,10 +227,14 @@ function utdanningTabell(iden) {
   for (u in utdanninger) {
     var id = "antallene" + i;
     for (var f in ut.data["11"].Menn) {
-      var tall1 = ut.data[utdanninger[i - 1]].Menn[f]; //tall1 = prosent menn som har tatt denne utdanningstypen
-      var tall2 = ut.data[utdanninger[i - 1]].Kvinner[f]; //tall2 = prosent kvinner som har tatt denne utdanningstypen
-      var g = (tall1 + tall2) / 2; //g = gjennomsnittet av tall1 og tall2
-      g = Math.round(g * 100) / 100; //Gjør om tallet til 2 desimaler
+      //tall1 = prosent menn som har tatt denne utdanningstypen
+      var tall1 = ut.data[utdanninger[i - 1]].Menn[f]; 
+      //tall2 = prosent kvinner som har tatt denne utdanningstypen
+      var tall2 = ut.data[utdanninger[i - 1]].Kvinner[f];
+      //g = gjennomsnittet av tall1 og tall2
+      var g = (tall1 + tall2) / 2; 
+      g = Math.round(g * 100) / 100; 
+      //Gjør om tallet til 2 desimalers
       leggTilInfoIRaden(id, g);
     }
     i++;
@@ -225,15 +242,23 @@ function utdanningTabell(iden) {
 }
 
 function nuSkjerDet() {
-  document.getElementById("befolkede").innerHTML = ""; //Tømmer diven slik at den er klar for ny tabell
-  document.getElementById("sysselsetting").innerHTML = ""; //Tømmer diven slik at den er klar for ny tabell
-  document.getElementById("utdannede").innerHTML = ""; //Tømmer diven slik at den er klar for ny tabell
-  var nummer = document.getElementById("byenNummer").value; //Nummer er den id'en som bruker vil få info om
+  //Tømmer diven slik at den er klar for ny tabell
+  document.getElementById("befolkede").innerHTML = ""; 
+  //Tømmer diven..
+  document.getElementById("sysselsetting").innerHTML = ""; 
+   //Tømmer diven..
+  document.getElementById("utdannede").innerHTML = "";
+   //Nummer er den id'en som bruker vil få info om
+  var nummer = document.getElementById("byenNummer").value;
   if (Number(nummer) in befolkning.getIDs()) {
-    nummer = String(nummer); //Gjør id'en til tekstverdi
-    befolkningTabell(nummer); //Henter tabell om befolkningen til den byen
-    sysselsatteTabell(nummer); //Henter tabell om sysselsetting til den byen
-    utdanningTabell(nummer); //Henter tabell om utdanning til den byen
+    //Gjør id'en til tekstverdi
+    nummer = String(nummer); 
+    //Henter tabell om befolkningen til den byen
+    befolkningTabell(nummer); 
+    //Henter tabell om sysselsetting til den byen
+    sysselsatteTabell(nummer);
+    //Henter tabell om utdanning til den byen 
+    utdanningTabell(nummer); 
   } else {
     var overskr = document.createElement("H2");
     overskr.innerHTML = "Det finnes ingen by med det kommunenummeret";

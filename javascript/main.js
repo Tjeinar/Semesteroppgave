@@ -136,6 +136,16 @@ function leggTilInfoIRaden(id, data) {
   document.getElementById(id).appendChild(cc);
 }
 
+//Denne funksjonen sjekker om nummer er gyldig
+function nummerSkjekk(nummer) {
+  if (nummer.length == 4) {
+    if (Number(nummer) in befolkning.getIDs()) {
+      return true;
+    }
+  };
+  return false;
+}
+
 function befolkningTabell(iden) {
   var overskr = document.createElement("H2");
   overskr.innerHTML = "Befolkning";
@@ -250,7 +260,7 @@ function oppsett() {
   document.getElementById("utdannede").innerHTML = "";
    //Nummer er den id'en som bruker vil få info om
   var nummer = document.getElementById("byenNummer").value;
-  if (Number(nummer) in befolkning.getIDs()) {
+  if (nummerSkjekk(nummer) == true) {
     //Gjør id'en til tekstverdi
     nummer = String(nummer); 
     //Henter tabell om befolkningen til den byen
@@ -267,7 +277,6 @@ function oppsett() {
 }
 
 function sammenlignByer() {
-  document.getElementById("sammenlignelser").innerHTML = "";
   //Lager to variabeler som bruker getInfo() egenskapen til å hente info om hver kommune
   var sy1 = sysselsatte.getInfo(
     document.getElementById("sammenligneNummer1").value
@@ -325,5 +334,21 @@ function sammenlignByer() {
     } else {
       document.getElementById("slTable").rows[4].cells[i].style.color = "red";
     }
+  }
+}
+
+
+function heiaBrann() {
+  document.getElementById("sammenliknelser").innerHTML = "";
+  var nummerEn = nummerSkjekk(document.getElementById("sammenlikneNummer1").value);
+  var nummerTo = nummerSkjekk(document.getElementById("sammenlikneNummer2").value);
+  if (nummerEn && nummerTo == true){
+    sammenliknByer();
+  }
+  else {
+    var h = document.createElement("H2");
+    var t = document.createTextNode("Nummrene er ikke et kommunenummer");
+    h.appendChild(t);
+    document.getElementById("sammenliknelser").appendChild(h);
   }
 }

@@ -96,18 +96,13 @@ table, th, td{
   text-align: center;
   min-width: 20%;
   max-width: 100%;
-  white-space:pre;
-  table-layout:auto;
 }
 /* Stil på overskrifter i tabellene */
 th{
   font-size:13px;
   font-weight: bold;
 }
-/* fjern */
-tr :hover{
-  background:#ff0000;
-}
+
 /* stil på data */
 td{
 font-size: auto;
@@ -129,9 +124,6 @@ font-size: auto;
 /*  */
 #overview{
   display:none;
-  flex-direction: row;
-  max-width:100%;
-  white-space: pre-wrap;
 }
 
 /*  */

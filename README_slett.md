@@ -5,6 +5,8 @@ I denne oppgaven skal vi lage et verktøy som viser data om norges befolkning.
 
 # TODO
 
+- Fikse når en skriver inn et ugyldig nummer med ærre en fire siffer
+
 ##Details
 
 - Fikse et wrapping issue på liten skjerm

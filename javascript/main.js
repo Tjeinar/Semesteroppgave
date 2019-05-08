@@ -169,7 +169,7 @@ function oversiktTabell() {
   }
 }
 
-window.onload() = oversiktTabell();
+document.getElementById("alleKommunene").onload = oversiktTabell();
 
 function befolkningTabell(iden) {
   var overskr = document.createElement("H2");

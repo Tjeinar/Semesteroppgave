@@ -70,6 +70,10 @@ main{
   overflow-x:scroll;
 }
 
+#myTable td{font-size:12px;padding: 5px}
+#myTable2 td{font-size:12px;padding: 5px}
+#myTable3 td{font-size:12px;padding: 2px}
+
 
 /*---Tabell-stil--*/
 th, td, input{
@@ -86,7 +90,7 @@ table, th, td{
   white-space: pre-wrap;
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 420px){
   tr { display: block; float: left; }
   td { display: block; }
   #antall{padding-left:20px}

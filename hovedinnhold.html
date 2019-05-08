@@ -1,24 +1,21 @@
 <!DOCTYPE html>
-<!-- html lang blir satt til nb slik at nettlesere skal oppfatte at teksten presentert på nettstedet er skrevet på Norsk bokmål-->
-<html lang="nb">
+<html lang="NB">
   <head>
-    <!-- Tegnkoding settes til UTF-8 for å kunne støtte en rekke språk -->
     <meta charset="UTF-8">
     <!-- <Meta> gir i dette tilfellet nettleseren instruksjoner på hvordan den skal kontrollere nettsidens dimensjoner og skalering  -->
     <!-- width=device-width gjør slik at bredden på siden blir tilpasset til enheten -->
     <!-- initial-scale=1.0 bestemmer i hvilken grad innholdet på nettsiden skal forstørres når en først blir lastet inn -->
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <!-- Denne delen identifiserer vårt css-dokument som et stilark, henviser til plasseringen av dokumentet og stadfester hva filen består av -->
+    <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css" type="text/css">
-    <!-- Javascript-dokument -->
+    <!-- Javascript -->
     <script src="javascript/main.js"></script>
     <script src="javascript/konstruktører.js"></script>
-    <!-- Javascript for søkefunksjonen -->
     <script src="javascript/searchfilter.js"></script>
     <title>Tall over norges befolkning</title>
   </head>
   <body>
-    <!--Navigasjonsmeny-->
+    <!--Meny-->
         <nav class ="menu">
           <ul>
             <!-- Knapp for å vise Introduksjon og introduksjonstekst -->
@@ -36,20 +33,11 @@
         <main class="main">
         <!-- Wrapper for de fire ulike elementene som skal presenteres på nettstedet -->
           <div class= flex-container>
-              <input type="text" placeholder="kommunenummer..">
-              <input type="text" placeholder="kommunenummer..">
-            <!--Input-felt hvor brukeren kan søke på kommunenummer.-->
-            <div class="search">
-              <input type="text" id="searchTerm" onkeyup="searchFunction()" placeholder="Søk på kommune...">
-            </div>
-            
-              <!--Introduksjonen består av tekst som beskriver produktet vårt, lenker til SSB-sine offentlige nettsider, og en notis om mulig feil i datasett-->
             <div id="introduction" class="content">
-            <!--Tekst for å introdusere brukeren til siden, og innholdet-->
             <article class="intro-txt">
               Dette nettstedet er laget for å presentere produktet vårt.<br><br>
               Produktet vårt er et verktøy for å vise data om Norges befolkning ved hjelp av data fra ssb.no <br><br>
-              <!-- Notis angående data som blir presentert -->
+              <!-- Data-notis-->
               <p id="notice">OBS! Tallene kan inneholde feil, vi tar forbehold om avvik i dataen som blir presentert.</p><br><br> 
               
               <!--Lenker til datasettene som blir brukt og presentert på nettstedet-->
@@ -64,35 +52,7 @@
         
               <!--Oversikt av kommunene ved hjelp av navn, kommunenumer og siste befolkningsmåling-->
               <div  id="overview" class="content" >
-                <table>
-                  <thead>
-                    <tr id="overview-name">
-                      <th>Kommunenavn</th>
-                    </tr>
-                    <tr id="overview-nr">
-                      <th>Kommmunenummer</th>
-                    </tr>
-                    <tr id ="overview-m">
-                      <th>Befolkning Menn</th>
-                    </tr>
-                    <tr id = "overview-w">
-                      <th>Befolkning Kvinner</th>
-                    </tr>
-                  </thead>
-                  <tbody></tbody>
-                </table>
-              </div>
-              
-              <div id="overview-mobile">
-                  <table>
-                      <thead>
-                        <th>Kommunenavn</th>
-                        <th>Kommunenummer</th>
-                        <th>Befolkning Menn</th>
-                        <th>Befolkning Kvinner</th>
-                      </thead>
-                      <tbody id="overview-small-screen"></tbody>
-                    </table>
+         
               </div>
               
               <!--Lar brukeren skrive inn et kommunenummer og viser informasjon basert på dette-->
@@ -103,33 +63,7 @@
             
               <!--Lar brukeren skrive inn to kommunummer og viser data for utvikling av sysselsettning.-->
               <div id="comparison" class="content">
-                <div id="comparison-table-1">
-                    <table>
-                      <thead>
-                        <tr id="comparison-table-1-name">
-                          <th>Eksempelkommune</th>
-                          <th>Historisk utvikling for sysselsetting</th>
-                          <tr><td>Årstall</td></tr>
-                     
-                        </tr>
-                      </thead>
-                      <tbody></tbody>
-                    </table>
-                  </div>
-                  
-                  <div id="comparison-table-2">
-                      <table>
-                        <thead>
-                          <tr id="comparison-table-2-name">
-                            <th>Eksempelkommune</th>
-                            <th>Historisk utvikling for sysselsetting</th>
-                            <td>Årstall</td>
-
-                          </tr>        
-                        </thead>
-                        <tbody></tbody>
-                      </table>
-                    </div>
+        
               </div>
             <!-- flex-container div -->
           </div>

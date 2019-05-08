@@ -5,29 +5,13 @@ I denne oppgaven skal vi lage et verktøy som viser data om norges befolkning.
 
 # TODO
 
-# Hovedinnhold: 
-- Vise historisk utvikling i form av tabeller/lister for befolkning sysselsetting og utdanning.
-
 ##Details
 
 - Fikse et wrapping issue på liten skjerm
 
-## Sammenligning
-- Skal i utgangspunktet ikke vise noen informasjon
-- Lage input felt for to gyldige kommunenummer
-- Vise historisk data for utvikling av sysselsetting for hver kjønnskategori i begge kommunene. 
-- For hvert år og hver kjønnskategori skal kommunen med høyest vekst i prosentpoeng, markerest. 
-
 # Presentasjon
 - Presentere data vertikalt på liten skjerm
 - Ellers presentere data horisontalt
-
-# Data
-
-##Main.js
-
-- Prøve å lage en funksjon som kan finne tidligste dato i et datasett
-
 
 # Rapport og øvrige filer
 - Beskriv hver fil kort (1-2 setninger)

@@ -148,12 +148,12 @@ function nummerSkjekk(nummer) {
 
 function oversiktTabell() {
   var x = document.createElement("TABLE");
-  x.setAttribute("id", "soversiktTable");
+  x.setAttribute("id", "oversiktTable");
   document.getElementById("alleKommunene").appendChild(x);
 
-  lagEnRad("alleKommunene", "byane", "Kommuner");
-  lagEnRad("alleKommunene", "KN", "Kommunenr.");
-  lagEnRad("alleKommunene", "sistBefolk", "Sist målte befolkning");
+  lagEnRad("oversiktTable", "byane", "Kommuner");
+  lagEnRad("oversiktTable", "KN", "Kommunenr.");
+  lagEnRad("oversiktTable", "sistBefolk", "Sist målte befolkning");
 
   for (i in befolkning.data) {
     leggTilInfoIRaden("byane", i);

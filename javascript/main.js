@@ -339,7 +339,7 @@ function sammenlignByer() {
 
 
 function heiaBrann() {
-  document.getElementById("sammenliknelser").innerHTML = "";
+  document.getElementById("sammenlignelser").innerHTML = "";
   var nummerEn = nummerSkjekk(document.getElementById("sammenlikneNummer1").value);
   var nummerTo = nummerSkjekk(document.getElementById("sammenlikneNummer2").value);
   if (nummerEn && nummerTo == true){

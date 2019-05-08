@@ -140,13 +140,10 @@ function leggTilInfoIRaden(id, data) {
 function nummerSkjekk(nummer) {
  if (befolkning.getInfo(nummer) == undefined) {
     return false;
+  }
+  else {
+    return true;
   };
-  if (nummer.length == 4) {
-    if (Number(nummer) in befolkning.getIDs()) {
-      return true;
-    }
-  };
-  return false;
 }
 
 function oversiktTabell() {

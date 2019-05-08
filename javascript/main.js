@@ -241,7 +241,7 @@ function utdanningTabell(iden) {
   }
 }
 
-function nuSkjerDet() {
+function oppsett() {
   //Tømmer diven slik at den er klar for ny tabell
   document.getElementById("befolkede").innerHTML = ""; 
   //Tømmer diven..
@@ -266,19 +266,19 @@ function nuSkjerDet() {
   }
 }
 
-function sammenliknByer() {
-  document.getElementById("sammenliknelser").innerHTML = "";
+function sammenlignByer() {
+  document.getElementById("sammenlignelser").innerHTML = "";
   //Lager to variabeler som bruker getInfo() egenskapen til å hente info om hver kommune
   var sy1 = sysselsatte.getInfo(
-    document.getElementById("sammenlikneNummer1").value
+    document.getElementById("sammenligneNummer1").value
   ); //Henter informasjon om sysselsetting om den gitte byen
   var sy2 = sysselsatte.getInfo(
-    document.getElementById("sammenlikneNummer2").value
+    document.getElementById("sammenligneNummer2").value
   );
   //Oppretter en tabbell
   var x = document.createElement("TABLE");
   x.setAttribute("id", "slTable");
-  document.getElementById("sammenliknelser").appendChild(x);
+  document.getElementById("sammenlignelser").appendChild(x);
   //Her lager vi en rad for årstallene
   lagEnRad("slTable", "årane", "År");
   //Her lager vi er rad for hver av byen for hvert kjønn.
@@ -297,7 +297,7 @@ function sammenliknByer() {
     leggTilInfoIRaden("antallSY1Kvinner", sy1.data.Kvinner[i]);
     leggTilInfoIRaden("antallSY2Kvinner", sy2.data.Kvinner[i]);
   }
-  //Her går vi gjennom hvert år og sammenlikner det med det forje året.
+  //Her går vi gjennom hvert år og sammenligner det med det forje året.
   // Siden vi skulle se på økningen har vi startet på 2006, siden det ikke er noen økning fra 2004 til 2005.
   //Dersom starter var i på 2.
   //lager vi en variabel som viser økning i prosentpoeng for hver rad

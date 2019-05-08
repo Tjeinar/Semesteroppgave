@@ -37,26 +37,26 @@ function konstruktør(fil){
   this.data = undefined; //Her kommer datasettene når de er lastet ned
   this.getNames = function() {
     var liste = [];
-    for (f in this.data) {
+    for (var f in this.data) {
       liste.push(f); //lager en liste med alle navnene
     }
     return liste;
   };
   this.getIDs = function() {
     var liste = [];
-    for (f in this.data) {
+    for (var f in this.data) {
       liste.push(this.data[f].kommunenummer); //lager en liste med alle kommunenummrene
     }
     return liste;
   };
   this.getInfo = function(kn){
-    for (g in this.data) { //Går gjennom alle kommunenummrene
+    for (var g in this.data) { //Går gjennom alle kommunenummrene
       if (this.data[g].kommunenummer == kn){ //Når vi kommer til det rette kommunenummeret
         var q = new Object;
         q.name = g;
         q.data = this.data[g];
         return q; // og informasjonen om datasettet.
-      };
+      }
     }
   };
   this.load = function(kategori) { //denne funksjonen sender forespørsel om å laste ned datasettet.
@@ -69,17 +69,17 @@ function konstruktør(fil){
         if (kategori == "befolk") { //kategori avgjør hvilke objektet som skal få datasettet
           befolkning.data = respons.elementer; // datasetter blir så lagt til i data til objektet
           befolkning.onload(); // kaller på onload-funksjonen som man skulle.
-        };
+        }
         if (kategori == "syssels") {
           sysselsatte.data = respons.elementer;
           sysselsatte.onload();
-        };
+        }
         if (kategori == "utdan") {
           utdanning.data = respons.elementer;
           utdanning.onload();
-        };
-      };
-    }
+        }
+      }
+    };
     htp.send();
   };
 }

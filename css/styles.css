@@ -1,7 +1,7 @@
  /*---Navigasjonsline---*/
  /* Stil på listen i nav-bar  */
  .menu ul{
-   display:flex;
+   display:block;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@
  }
  /* Stil på elementene som ligger i nav-bar (introduksjon, oversikt, etc..) */
 .menu li {
-    display: flex;
+    display: block;
     color: #ffffff;
     text-decoration: none;
     align-items: center;

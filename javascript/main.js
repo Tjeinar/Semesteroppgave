@@ -146,6 +146,30 @@ function nummerSkjekk(nummer) {
   return false;
 }
 
+function oversiktTabell() {
+  var x = document.createElement("TABLE");
+  x.setAttribute("id", "soversiktTable");
+  document.getElementById("alleKommunene").appendChild(x);
+
+  lagEnRad("alleKommunene", "byane", "Kommuner");
+  lagEnRad("alleKommunene", "KN", "Kommunenr.");
+  lagEnRad("alleKommunene", "sistBefolk", "Sist målte befolkning");
+
+  for (i in befolkning.data) {
+    leggTilInfoIRaden("byane", i);
+    leggTilInfoIRaden("KN", befolkning.data[i].kommunenummer);
+    var lista = [];
+    for (u in befolkning.data[i].Menn) {
+      lista.push(u);
+    }
+    var punkt = lista.length - 1;
+    var menn = befolkning.data[i].Menn[lista[punkt]];
+    var kvinner = befolkning.data[i].Kvinner[lista[punkt]];
+    leggTilInfoIRaden("sistBefolk", menn + kvinner);
+  }
+}
+
+
 function befolkningTabell(iden) {
   var overskr = document.createElement("H2");
   overskr.innerHTML = "Befolkning";

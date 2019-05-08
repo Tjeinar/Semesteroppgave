@@ -169,6 +169,7 @@ function oversiktTabell() {
   }
 }
 
+oversiktTabell();
 
 function befolkningTabell(iden) {
   var overskr = document.createElement("H2");

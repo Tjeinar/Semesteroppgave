@@ -51,32 +51,13 @@ html, body{
   background-color: #f5f5f5;
 }
 
-
-
 /*---Hovedområde for presentasjon av innhold---*/
 
 /* Gjør at alt innhold i main "flexer" */
 main{
-  display:flex;
   padding:20px;
   /* Tvinger footer til å være på bunnen selv om det er lite innhold på siden  */
   min-height: 100%
-}
-
-/*-- Stil på searchbar --*/
-.search {
-  width: 20%;
-  display: flex;
-  top: 50%; 
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-#searchTerm {
-  width: 100%;
-  padding: 5px;
-  height: 20px;
-  outline: none;
-  color: #111;
 }
 
 /*---Stil på lenker---*/
@@ -84,9 +65,16 @@ main{
   text-decoration: none;
 }
 
+
+#befolkede,#sysselsetting, #utdannede{
+  overflow-x:scroll;
+}
+
+
 /*---Tabell-stil--*/
 th, td, input{
   font: Times;
+  font-size: 10px;
 }
 /**/
 table, th, td{
@@ -95,18 +83,30 @@ table, th, td{
   padding: 5px 5px;
   text-align: center;
   min-width: 20%;
-  max-width: 100%;
+  white-space: pre-wrap;
 }
+
+@media screen and (max-width: 380px) {
+  tr { display: block; float: left; }
+  td { display: block; }
+  #antall{padding-left:20px}
+  #antallet{padding-left:20px}
+  /* Fjernet en boks rundt tabellen og justerte tabellen for veldig små skjermer */
+  #alleKommunene,table{border:none;}
+  #alleKommunene,table,td,tr{font-size:9px; padding:0;}
+
+  };
+
+
+td, tr{
+display:block;
+flex-direction: column;
+  }
 /* Stil på overskrifter i tabellene */
 th{
-  font-size:13px;
   font-weight: bold;
 }
 
-/* stil på data */
-td{
-font-size: auto;
-}
 
 
 /*---Stil på introduksjonsteksten---*/
@@ -116,23 +116,25 @@ font-size: auto;
   font-size: auto;
   flex-wrap: wrap;
   padding-bottom: 20px;
+  max-width:500px;
 }
 
 #notice{
   font-weight: bold;
+  padding-top:10px;
 }
 /*  */
 #overview{
   display:none;
+  max-width: 100%;
+  overflow-x:scroll;
+  
 }
 
-/*  */
-
-
-/*  */
 #details{
 display:none;
 }
+
 
 /*  */
 #comparison{

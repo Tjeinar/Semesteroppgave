@@ -143,7 +143,7 @@ function nummerSkjekk(nummer) {
   }
   else {
     return true;
-  };
+  }
 }
 
 function oversiktTabell() {
@@ -155,11 +155,11 @@ function oversiktTabell() {
   lagEnRad("oversiktTable", "KN", "Kommunenr.");
   lagEnRad("oversiktTable", "sistBefolk", "Sist målte befolkning");
 
-  for (i in befolkning.data) {
+  for (var i in befolkning.data) {
     leggTilInfoIRaden("byane", i);
     leggTilInfoIRaden("KN", befolkning.data[i].kommunenummer);
     var lista = [];
-    for (u in befolkning.data[i].Menn) {
+    for (var u in befolkning.data[i].Menn) {
       lista.push(u);
     }
     var punkt = lista.length - 1;

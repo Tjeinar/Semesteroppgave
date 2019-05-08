@@ -33,13 +33,15 @@
             <div id="introduction" class="content">
             <article class="intro-txt">
               <section>
-                <h1>Informasjon om nettstedet</h1>
+                <h1 class = main_header>Informasjon om nettstedet</h1>
                 <p>Dette nettstedet er et verktøy for å vise data om Norges befolkning ved hjelp av data fra Statistisk sentralbyrå.<br><br>
-                Informasjon om innholdet på siden:<br>
-                Oversikt viser alle kommunene i Norge med navn, kommunenummer, og siste måling av total befolkning. <br>
-                Detaljer viser mer detaljert informasjon ved å søke på et kommunenummer. Søkeresultatet vil vise en oversikt med kommunens navn, kommunenummer, siste målt befolkning, siste målte statistikk for sysselsetning og høyere utdanning.<br>
-                Sammenligning er et verktøy for å sammenligne to kommuner ved å skrive inn to gyldige kommunenummer. Dette vil vise historisk data for utvikling av sysselsetning for menn og kvinner i begge kommunene.
-                Det vil være markert hvilken av kommunene som har høyest vekst i prosentpoeng.</p>
+                Informasjon om innholdet på siden:<br><br>
+                Oversikt viser alle kommunene i Norge med navn, kommunenummer, og siste måling av total befolkning. <br><br>
+                Detaljer viser mer detaljert informasjon ved å søke på et kommunenummer.
+                Søkeresultatet vil vise en oversikt med kommunens navn, kommunenummer, siste målt befolkning, siste målte statistikk for sysselsetning og høyere utdanning.<br><br>
+                Sammenligning er et verktøy for å sammenligne to kommuner ved å skrive inn to gyldige kommunenummer. <br> 
+                Dette vil vise historisk data for utvikling av sysselsetning for menn og kvinner i begge kommunene.
+                Det vil være markert hvilken av kommunene som har høyest vekst i prosentpoeng</p>
               </section>
               <section>
                 <!-- Notis angående data som blir presentert -->
@@ -63,7 +65,7 @@
               
               <!--Lar brukeren skrive inn et kommunenummer og viser informasjon basert på dette-->
               <div id="details" class="content">
-                <input type="text" id="byenNummer">
+                <input type="text" placeholder=""id="byenNummer">
                 <button id="knapp" onclick="oppsett()">Søk</button>
                 <div id="befolkede">
                 </div>
@@ -75,9 +77,9 @@
             
               <!--Lar brukeren skrive inn to kommunummer og viser data for utvikling av sysselsettning.-->
               <div id="comparison" class="content">
-                <input type="text" id="sammenligneNummer1">
+                <input type="text" placeholder="Kommune 1" id="sammenligneNummer1">
                 <button id="SL" onclick="heiaBrann()">Sammenligne</button>
-                <input type="text" id="sammenligneNummer2">
+                <input type="text" placeholder="Kommune 2" id="sammenligneNummer2">
                 <div id="sammenlignelser">
                 </div>
               </div>

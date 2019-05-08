@@ -7,6 +7,8 @@ I denne oppgaven skal vi lage et verktøy som viser data om norges befolkning.
 
 - Fikse når en skriver inn et ugyldig nummer med ærre en fire siffer
 
+- Fikse kommunummer bug (0218-bug)
+
 ##Details
 
 - Fikse et wrapping issue på liten skjerm

@@ -169,8 +169,11 @@ function oversiktTabell() {
   }
 }
 
-window.onload = oversiktTabell();
-
+function aktiverOversikt(target) {
+ oversiktTabell();
+ showHide(target);
+}
+ 
 function befolkningTabell(iden) {
   var overskr = document.createElement("H2");
   overskr.innerHTML = "Befolkning";

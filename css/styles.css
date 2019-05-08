@@ -128,7 +128,7 @@ font-size: auto;
 }
 /*  */
 #overview{
-  display:flex;
+  display:none;
   flex-direction: row;
   max-width:100%;
   white-space: pre-wrap;
@@ -139,12 +139,12 @@ font-size: auto;
 
 /*  */
 #details{
-display:flex;
+display:none;
 }
 
 /*  */
 #comparison{
-display:flex;
+display:none;
 
 }
 

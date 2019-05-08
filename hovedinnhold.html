@@ -57,13 +57,23 @@
               
               <!--Lar brukeren skrive inn et kommunenummer og viser informasjon basert på dette-->
               <div id="details" class="content">
-
-                
+                <input type="text" id="byenNummer">
+                <button id="knapp" onclick="nuSkjerDet()">Søk</button>
+                <div id="befolkede">
+                </div>
+                <div id="sysselsetting">
+                </div>
+                <div id="utdannede">
+                </div>
               </div>
             
               <!--Lar brukeren skrive inn to kommunummer og viser data for utvikling av sysselsettning.-->
               <div id="comparison" class="content">
-        
+                <input type="text" id="sammenlikneNummer1">
+                <button id="SL" onclick="sammenliknByer()">Sammenlikne</button>
+                <input type="text" id="sammenlikneNummer2">
+                <div id="sammenliknelser">
+                </div>
               </div>
             <!-- flex-container div -->
           </div>

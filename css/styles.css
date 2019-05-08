@@ -23,12 +23,6 @@
 .menu li:hover {
     background-color: #111;
   }
-/* Gjør at teksten passer på veldig små skjermer */
-@media only screen and (max-width: 350px){
-  input[type="button"]{
-    font-size:10px;
-  }
-}
 
 /* Stil på knapper generelt */
 input[type="button"]{
@@ -52,35 +46,36 @@ html, body{
 }
 
 /*---Hovedområde for presentasjon av innhold---*/
-
-/* Gjør at alt innhold i main "flexer" */
 main{
   padding:20px;
   /* Tvinger footer til å være på bunnen selv om det er lite innhold på siden  */
   min-height: 100%
 }
 
+
 /*---Stil på lenker---*/
 .links, a, a:visited{
   text-decoration: none;
 }
 
-
-#befolkede,#sysselsetting, #utdannede{
+/* "Skrolle-hjul" dersom innholdet skulle flyte utenfor boksen sin */
+#befolkede, #sysselsetting, #utdannede{
   overflow-x:scroll;
 }
 
+/*---Tabell-stil--*/
+
+/* Stil på plassering og formatering av tekst i tabeller */
 #myTable td{font-size:12px;padding: 5px}
 #myTable2 td{font-size:12px;padding: 5px}
 #myTable3 td{font-size:12px;padding: 2px}
 
+/* Tekst i tabell */
 
-/*---Tabell-stil--*/
-th, td, input{
+td, input{
   font: Times;
-  font-size: 10px;
 }
-/**/
+/* Utseendet og utforming på tabell*/
 table, th, td{
   border: solid 2px #333;
   border-collapse: collapse;
@@ -89,30 +84,17 @@ table, th, td{
   min-width: 20%;
   white-space: pre-wrap;
 }
-
-@media screen and (max-width: 420px){
+/* Justerer innholdet i tabellen til å være vertikalt når det blir brukt små skjermers */
+@media screen and (max-width: 513px){
   tr { display: block; float: left; }
   td { display: block; }
   #antall{padding-left:20px}
   #antallet{padding-left:20px}
-  /* Fjernet en boks rundt tabellen og justerte tabellen for veldig små skjermer */
-  #alleKommunene,table{border:none;}
   #alleKommunene,table,td,tr{font-size:9px; padding:0;}
-
+  /* Fjerner en ekstra boks rundt tabellen*/
+  #alleKommunene,table{border:none;}
+ 
   };
-
-
-td, tr{
-display:block;
-flex-direction: column;
-  }
-/* Stil på overskrifter i tabellene */
-th{
-  font-weight: bold;
-}
-
-
-
 /*---Stil på introduksjonsteksten---*/
 #introduction{
   display:flex;
@@ -121,29 +103,35 @@ th{
   flex-wrap: wrap;
   padding-bottom: 20px;
   max-width:500px;
+  font-size: small;
 }
-
+/* Data-notis */
 #notice{
   font-weight: bold;
   padding-top:10px;
 }
-/*  */
+/* Blokk-element for Oversikt */
 #overview{
   display:none;
   max-width: 100%;
   overflow-x:scroll;
-  
+  overflow-y:scroll;
+  max-height: 550px;
 }
-
+/* Blokk-element for Detaljer */
 #details{
 display:none;
 }
 
 
-/*  */
-#comparison{
+/* Blokk-element for Sammenligning */
+#comparison {
 display:none;
 
+/* Liten justering av plasseringen til elementet */
+}
+#sammenlignelser{
+  padding-top:10px;
 }
 
 /*---Footer---*/

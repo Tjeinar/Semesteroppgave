@@ -375,7 +375,7 @@ function heiaBrann() {
   }
   else {
     var h = document.createElement("H2");
-    var t = document.createTextNode("Nummrene er ikke et kommunenummer");
+    var t = document.createTextNode("Skriv inn et gyldig kommunenummer");
     h.appendChild(t);
     document.getElementById("sammenlignelser").appendChild(h);
   }

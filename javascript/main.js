@@ -51,12 +51,12 @@ function befolkningTabell(iden) {
   lagEnRad("myTable", "år", "År");
   lagEnRad("myTable", "antall", "Antall");
 
-  for (i in be.data.Menn) {
+  for (var i in be.data.Menn) {
     //Går gjennom hver årstall
     leggTilInfoIRaden("år", i);
   }
 
-  for (i in be.data.Menn) {
+  for (var i in be.data.Menn) {
     //Går gjennom hvert år her også
     leggTilInfoIRaden("antall", be.data.Menn[i] + be.data.Kvinner[i]);
   }
@@ -77,7 +77,7 @@ function sysselsatteTabell(iden) {
 
   lagEnRad("myTable2", "antallet", "Antall");
 
-  for (i in sy.data["Begge kjønn"]) {
+  for (var i in sy.data["Begge kjønn"]) {
     //Går gjennom hvert år
     //Legger til året i den ene table rowen
     leggTilInfoIRaden("årene", i);
@@ -103,7 +103,7 @@ function utdanningTabell(iden) {
 
   lagEnRad("myTable3", "åra", "Utdanninger/År"); //Den første cellen i raden blir Utdanning/År
 
-  for (u in ut.data["11"].Menn) {
+  for (var u in ut.data["11"].Menn) {
     //Går gjennom hvert år
     leggTilInfoIRaden("åra", u);
   }
@@ -118,7 +118,7 @@ function utdanningTabell(iden) {
   var i = 1;
   for (u in utdanninger) {
     var id = "antallene" + i;
-    for (f in ut.data["11"].Menn) {
+    for (var f in ut.data["11"].Menn) {
       var tall1 = ut.data[utdanninger[i - 1]].Menn[f]; //tall1 = prosent menn som har tatt denne utdanningstypen
       var tall2 = ut.data[utdanninger[i - 1]].Kvinner[f]; //tall2 = prosent kvinner som har tatt denne utdanningstypen
       var g = (tall1 + tall2) / 2; //g = gjennomsnittet av tall1 og tall2
@@ -167,15 +167,15 @@ function sammenliknByer() {
   lagEnRad("slTable", "antallSY1Kvinner", sy1.name + " Kvinner");
   lagEnRad("slTable", "antallSY2Kvinner", sy2.name + " Kvinner");
   //Legger til hver år i tabellen
-  for (i in sy1.data["Menn"]) {
+  for (var i in sy1.data.Menn) {
     leggTilInfoIRaden("årane", i);
   }
   //Legger til antall sysselsatte for hvert år i hver rad
-  for (i in sy1.data["Menn"]) {
-    leggTilInfoIRaden("antallSY1Menn", sy1.data["Menn"][i]);
-    leggTilInfoIRaden("antallSY2Menn", sy2.data["Menn"][i]);
-    leggTilInfoIRaden("antallSY1Kvinner", sy1.data["Kvinner"][i]);
-    leggTilInfoIRaden("antallSY2Kvinner", sy2.data["Kvinner"][i]);
+  for (i in sy1.data.Menn) {
+    leggTilInfoIRaden("antallSY1Menn", sy1.data.Menn[i]);
+    leggTilInfoIRaden("antallSY2Menn", sy2.data.Menn[i]);
+    leggTilInfoIRaden("antallSY1Kvinner", sy1.data.Kvinner[i]);
+    leggTilInfoIRaden("antallSY2Kvinner", sy2.data.Kvinner[i]);
   }
   //Her går vi gjennom hvert år og sammenlikner det med det forje året.
   // Siden vi skulle se på økningen har vi startet på 2006, siden det ikke er noen økning fra 2004 til 2005.

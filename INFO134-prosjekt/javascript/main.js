@@ -1,7 +1,7 @@
 //JS-dokument for funksjonalitet
 
 /*
- Data som behandles i denne filen er hentet fra følgende adresser
+ Data som behandles i denne filen er hentet fra følgende adresser: 
 ************************************************************************
 *   |-------------------------------------------------------------|    *
 *   | Befolkning: http://wildboy.uib.no/~tpe056/folk/104857.json  |    *
@@ -39,14 +39,14 @@ function logLoadingMessage() {
 
 //-----------------------Konstruktør-----------------------//
 
-function constructor(fil){
-  this.data = undefined;
+function konstruktør(fil){
+  this.data = undefined; 
   //Her kommer datasettene når de er lastet neds
   this.getNames = function() {
     var liste = [];
     for (var f in this.data) {
       //lager en liste med alle navnene
-      liste.push(f);
+      liste.push(f); 
     }
     return liste;
   };
@@ -54,7 +54,7 @@ function constructor(fil){
     var liste = [];
     for (var f in this.data) {
       //lager en liste med alle kommunenummrene
-      liste.push(this.data[f].kommunenummer);
+      liste.push(this.data[f].kommunenummer); 
     }
     return liste;
   };
@@ -67,11 +67,11 @@ function constructor(fil){
         q.name = g;
         q.data = this.data[g];
         // og informasjonen om datasettet.
-        return q;
+        return q; 
       }
     }
   };
-  this.load = function(kategori){ 
+  this.load = function(kategori) { 
     //denne funksjonen sender forespørsel om å laste ned datasettet.
     var respons = undefined;
     var htp = new XMLHttpRequest();
@@ -80,9 +80,9 @@ function constructor(fil){
       if (htp.readyState == 4 && htp.status == 200){
         respons = JSON.parse(htp.responseText);
         //kategori avgjør hvilke objektet som skal få datasettet
-        if (kategori == "befolk"){ 
+        if (kategori == "befolk") { 
           // datasetter blir så lagt til i data til objektet
-          befolkning.data = respons.elementer;
+          befolkning.data = respons.elementer; 
         }
         if (kategori == "syssels") {
           sysselsatte.data = respons.elementer;
@@ -99,13 +99,13 @@ function constructor(fil){
 }
 
 //Her oppretter vi objekter hvor hvert av datasettene og gir dem onload-egenskapen.
-var befolkning = new constructor("http://wildboy.uib.no/~tpe056/folk/104857.json");
+var befolkning = new konstruktør("http://wildboy.uib.no/~tpe056/folk/104857.json");
 befolkning.load("befolk");
 
-var sysselsatte = new constructor("http://wildboy.uib.no/~tpe056/folk/100145.json");
+var sysselsatte = new konstruktør("http://wildboy.uib.no/~tpe056/folk/100145.json");
 sysselsatte.load("syssels");
 
-var utdanning = new constructor("http://wildboy.uib.no/~tpe056/folk/85432.json");
+var utdanning = new konstruktør("http://wildboy.uib.no/~tpe056/folk/85432.json");
 utdanning.onload = function() {
   logLoadingMessage();
   enableNavigationButtons();
@@ -197,12 +197,12 @@ function befolkningTabell(iden) {
  //Legger til "Befolkning som overskirft over befolkningstabellen
   var overskr = document.createElement("H2");
   overskr.innerHTML = "Befolkning";
-  document.getElementById("befolkning").appendChild(overskr);
+  document.getElementById("befolkning").appendChild(overskr); 
 
   //Oppretter en tabell
-  var x = document.createElement("TABLE");
+  var x = document.createElement("TABLE"); 
   //Gir den ID : MyTable
-  x.setAttribute("id", "myTable");
+  x.setAttribute("id", "myTable"); 
   //Legger tabellen til befolkning-diven
   document.getElementById("befolkning").appendChild(x);
   lagEnRad("myTable", "år", "År");
@@ -227,10 +227,10 @@ function sysselsatteTabell(iden) {
   document.getElementById("sysselsatte").appendChild(overskr);
 
   //Henter informasjon om sysselsetting om den gitte byen
-  var sy = sysselsatte.getInfo(iden);
+  var sy = sysselsatte.getInfo(iden); 
 
   //Oppretter en tabell
-  var x = document.createElement("TABLE");
+  var x = document.createElement("TABLE"); 
   x.setAttribute("id", "myTable2");
   document.getElementById("sysselsatte").appendChild(x);
 
@@ -259,15 +259,15 @@ function utdanningTabell(iden) {
   document.getElementById("utdannede").appendChild(overskr);
 
   //Henter informasjon om utdanning fra gitte byen
-  var ut = utdanning.getInfo(iden);
+  var ut = utdanning.getInfo(iden); 
 
   //Lager en tabell
-  var x = document.createElement("TABLE");
+  var x = document.createElement("TABLE"); 
   x.setAttribute("id", "myTable3");
   document.getElementById("utdannede").appendChild(x);
 
   //Den første cellen i raden blir Utdanning/År
-  lagEnRad("myTable3", "åra", "Utdanninger/År");
+  lagEnRad("myTable3", "åra", "Utdanninger/År"); 
 
   for (var u in ut.data["11"].Menn) {
     //Går gjennom hvert år
@@ -275,7 +275,7 @@ function utdanningTabell(iden) {
   }
 
   //Lager en variabel med alle de mulige utdanningene
-  var utdanninger = ["11", "01", "02a", "03a", "04a", "09a"];
+  var utdanninger = ["11", "01", "02a", "03a", "04a", "09a"]; 
   for (var i = 1; i < 7; i++) {
     //Lager en loop som gåes gjennom 6 ganger
     var id = "antallene" + i; //Oppretter forskjellige ider for hver loop, antallene1, antallene2 osv...
@@ -287,12 +287,12 @@ function utdanningTabell(iden) {
     var id = "antallene" + i;
     for (var f in ut.data["11"].Menn) {
       //tall1 = prosent menn som har tatt denne utdanningstypen
-      var tall1 = ut.data[utdanninger[i - 1]].Menn[f];
+      var tall1 = ut.data[utdanninger[i - 1]].Menn[f]; 
       //tall2 = prosent kvinner som har tatt denne utdanningstypen
       var tall2 = ut.data[utdanninger[i - 1]].Kvinner[f];
       //g = gjennomsnittet av tall1 og tall2
-      var g = (tall1 + tall2) / 2;
-      g = Math.round(g * 100) / 100;
+      var g = (tall1 + tall2) / 2; 
+      g = Math.round(g * 100) / 100; 
       //Gjør om tallet til 2 desimalers
       leggTilInfoIRaden(id, g);
     }
@@ -331,14 +331,14 @@ function punktvisInfo(nummer) {
   var sisteSysselsatte = document.getElementById("myTable2").rows[1].cells[14].innerHTML;
   lagListeItem("minUL", "Siste måling av sysselsatte: " + sisteSysselsatte);
 //Plukker ut siste året hvor det ble gjort en måling om utdanning
-  var sisteAAr = document.getElementById("myTable3").rows[0].cells[39].innerHTML;
+  var sisteÅr = document.getElementById("myTable3").rows[0].cells[39].innerHTML;
   //Beregninger for å finne ut mennesker med høyere utdanning
-  var prosentKvinner1 = ut.data["03a"].Kvinner[sisteAAr];
-  var prosentMenn2 = ut.data["03a"].Menn[sisteAAr];
-  var prosentKvinner2 = ut.data["04a"].Kvinner[sisteAAr];
-  var prosentMenn1 = ut.data["04a"].Menn[sisteAAr];
-  var antallKvinner = be.data.Kvinner[sisteAAr];
-  var antallMenn = be.data.Menn[sisteAAr];
+  var prosentKvinner1 = ut.data["03a"].Kvinner[sisteÅr];
+  var prosentMenn2 = ut.data["03a"].Menn[sisteÅr];
+  var prosentKvinner2 = ut.data["04a"].Kvinner[sisteÅr];
+  var prosentMenn1 = ut.data["04a"].Menn[sisteÅr];
+  var antallKvinner = be.data.Kvinner[sisteÅr];
+  var antallMenn = be.data.Menn[sisteÅr];
   var utKvinner1 = Number(antallKvinner) / 100 * Number(prosentKvinner1);
   var utMenn1 = Number(antallMenn) / 100 * Number(prosentMenn1);
   var utKvinner2 = Number(antallKvinner) / 100 * Number(prosentKvinner2);

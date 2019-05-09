@@ -15,8 +15,8 @@
 
 // Sørger for at bare 1 av de fire blokk-elemente er synlig til enhver tid. Blir styrt gjennom nav-bar
 function showHide(div) {
-  var liste = ["introduction", "overview", "details", "comparison"]
-  for (i in liste) {
+  var liste = ["introduction", "overview", "details", "comparison"];
+  for (var i in liste) {
     if (liste[i] == div) {
       document.getElementById(liste[i]).style.display = "block";
     }
@@ -63,7 +63,7 @@ function konstruktør(fil){
     for (var g in this.data) {
        //Når vi kommer til det rette kommunenummerets
       if (this.data[g].kommunenummer == kn){
-        var q = new Object;
+        var q = new Object({});
         q.name = g;
         q.data = this.data[g];
         // og informasjonen om datasettet.
@@ -152,7 +152,7 @@ function nummerSkjekk(nummer) {
     }
     else {
       return false;
-    };
+    }
   }
 }
 

@@ -11,21 +11,6 @@
 ************************************************************************
 */
 
-/*
-//Funksjon for å skjule/vise div elementer via navbar. 
-function showHide(target){
-  var targetdiv = document.getElementById(target);  
-  var divs = document.getElementsByClassName('content');
-  var visible = targetdiv.style.display=='block';  
-  for(var i=0;i<divs.length;i++){
-     divs[i].style.display = 'none';
-  }
-  //Gjør den valgte div synlig
-  targetdiv.style.display = visible?'none':'block';  
-  return false;
-}
-*/
-
 function showHide(knæpp) {
   var liste = ["introduction", "overview", "details", "comparison"]
   for (i in liste) {

@@ -11,7 +11,7 @@
 ************************************************************************
 */
 
-
+/*
 //Funksjon for å skjule/vise div elementer via navbar. 
 function showHide(target){
   var targetdiv = document.getElementById(target);  
@@ -23,6 +23,19 @@ function showHide(target){
   //Gjør den valgte div synlig
   targetdiv.style.display = visible?'none':'block';  
   return false;
+}
+*/
+
+function showHide(knæpp) {
+  var liste = ["introduction", "overview", "details", "comparison"]
+  for (i in liste) {
+    if (liste[i] == knæpp) {
+      document.getElementById(liste[i]).style.display = "block";
+    }
+    else{
+      document.getElementById(liste[i]).style.display = "none";
+    }
+  }
 }
 
 function enableNavigationButtons() {

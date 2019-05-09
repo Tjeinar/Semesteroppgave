@@ -195,10 +195,6 @@ function aktiverOversikt(target) {
 function befolkningTabell(iden) {
  //Henter informasjon om den kommunen
   var be = befolkning.getInfo(iden);
- //Legger til hvilke by det er som hoveroverskrift
- var kæmBy = document.createElement("H1");
-  kæmBy.innerHTML = be.name;
-  document.getElementById("befolkning").appendChild(kæmBy);
  //Legger til "Befolkning som overskirft over befolkningstabellen
   var overskr = document.createElement("H2");
   overskr.innerHTML = "Befolkning";
@@ -305,6 +301,56 @@ function utdanningTabell(iden) {
   }
 }
 
+
+//id = hvilke liste liste-itemet skal bli lagt til i
+//data = det som skal skal stå i liste-itemet
+function lagListeItem(id, data) {
+  var y = document.createElement("LI");
+  var t = document.createTextNode(data);
+  y.appendChild(t);
+  document.getElementById(id).appendChild(y);
+}
+
+<---------- //Funksjon som lager en en punktvis liste
+
+function punktvisInfo(nummer) {
+//Definerer info fra hvert datasett
+  var be = befolkning.getInfo(nummer),
+  sy = sysselsatte.getInfo(nummer),
+  ut = utdanning.getInfo(nummer);
+
+ //Oppretter en usortert liste
+  var punktListe = document.createElement("UL");
+  punktListe.setAttribute("id", "minUL");
+  document.getElementById("kortInfo").appendChild(punktListe);
+//Lager et item med navnet
+  lagListeItem("minUL", be.name);
+//Lager en item med kommunenummer
+  lagListeItem("minUL", "Kommunenummer: " + nummer);
+//Plukker ut siste befolkning fra tabellen og laget et item med det
+  var sisteBefolkning = document.getElementById("myTable").rows[1].cells[12].innerHTML;
+  lagListeItem("minUL", "Siste måling av befolkning: " + sisteBefolkning);
+//Plukker ut siste målte sysselsatte fra tabellen og lager et item med det
+  var sisteSysselsatte = document.getElementById("myTable2").rows[1].cells[14].innerHTML;
+  lagListeItem("minUL", "Siste måling av sysselsatte: " + sisteSysselsatte);
+//Plukker ut siste året hvor det ble gjort en måling om utdanning
+  var sisteÅr = document.getElementById("myTable3").rows[0].cells[39].innerHTML;
+  //Beregninger for å finne ut mennesker med høyere utdanning
+  var prosentKvinner1 = ut.data["03a"].Kvinner[sisteÅr];
+  var prosentMenn2 = ut.data["03a"].Menn[sisteÅr];
+  var prosentKvinner2 = ut.data["04a"].Kvinner[sisteÅr];
+  var prosentMenn1 = ut.data["04a"].Menn[sisteÅr];
+  var antallKvinner = be.data.Kvinner[sisteÅr];
+  var antallMenn = be.data.Menn[sisteÅr];
+  var utKvinner1 = Number(antallKvinner) / 100 * Number(prosentKvinner1);
+  var utMenn1 = Number(antallMenn) / 100 * Number(prosentMenn1);
+  var utKvinner2 = Number(antallKvinner) / 100 * Number(prosentKvinner2);
+  var utMenn2 = Number(antallMenn) / 100 * Number(prosentMenn2);
+  var høyereUt = utKvinner1 + utMenn1 + utKvinner2 + utMenn2;
+  lagListeItem("minUL", "Sist målte personer med høyere utdanning: " + høyereUt);
+}
+
+
 //-----------------------Tabell-oppsett-----------------------//
 
 function oppsett() {
@@ -314,6 +360,8 @@ function oppsett() {
   document.getElementById("sysselsatte").innerHTML = ""; 
    //Tømmer diven..
   document.getElementById("utdannede").innerHTML = "";
+ //Tømmer div
+ document.getElementById("kortInfo").innerHTML = "";
    //Nummer er den id'en som bruker vil få info om
   var nummer = document.getElementById("byenNummer").value;
   if (nummerSkjekk(nummer) == true) {
@@ -325,6 +373,8 @@ function oppsett() {
     sysselsatteTabell(nummer);
     //Henter tabell om utdanning til den byen 
     utdanningTabell(nummer); 
+   //Lager en ul med info
+   punktvisInfo(nummer);
   } else {
     var overskr = document.createElement("H2");
     overskr.innerHTML = "Det finnes ingen by med det kommunenummeret";

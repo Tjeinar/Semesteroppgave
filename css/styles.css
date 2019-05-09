@@ -94,7 +94,7 @@ table, th, td{
  
   };
 /*---Stil på introduksjonsteksten---*/
-#introduction{
+#introduksjon{
   display:flex;
   flex-direction: row;
   font-size: auto;
@@ -107,12 +107,12 @@ table, th, td{
   max-width:500px;
 }
 /* Data-notis */
-#notice{
+#notis{
   font-weight: bold;
   padding-top:10px;
 }
 /* Blokk-element for Oversikt */
-#overview{
+#oversikt{
   display:none;
   max-width: 100%;
   overflow-x:scroll;
@@ -120,13 +120,13 @@ table, th, td{
   max-height: 550px;
 }
 /* Blokk-element for Detaljer */
-#details{
+#detaljer{
 display:none;
 }
 
 
 /* Blokk-element for Sammenligning */
-#comparison {
+#sammenligning {
 display:none;
 
 /* Liten justering av plasseringen til elementet */

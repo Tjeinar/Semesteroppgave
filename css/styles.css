@@ -150,6 +150,10 @@ display:none;
   overflow-x:scroll;
 }
 
+#kortInfo{
+  padding:20px;
+}
+
 /*---Footer---*/
 .footer{
   background-color: #333;

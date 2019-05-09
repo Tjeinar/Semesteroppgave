@@ -11,18 +11,16 @@
 ************************************************************************
 */
 
-
-//Funksjon for å skjule/vise div elementer via navbar. 
-function showHide(target){
-  var targetdiv = document.getElementById(target);  
-  var divs = document.getElementsByClassName('content');
-  var visible = targetdiv.style.display=='block';  
-  for(var i=0;i<divs.length;i++){
-     divs[i].style.display = 'none';
+function showHide(knæpp) {
+  var liste = ["introduction", "overview", "details", "comparison"]
+  for (i in liste) {
+    if (liste[i] == knæpp) {
+      document.getElementById(liste[i]).style.display = "block";
+    }
+    else{
+      document.getElementById(liste[i]).style.display = "none";
+    }
   }
-  //Gjør den valgte div synlig
-  targetdiv.style.display = visible?'none':'block';  
-  return false;
 }
 
 function enableNavigationButtons() {
@@ -147,6 +145,9 @@ function nummerSkjekk(nummer) {
 }
 
 function oversiktTabell() {
+ //Tømmer diven for ny tabell
+ document.getElementById("alleKommunene").innerHTML = "";
+ //Lager en tabel
   var x = document.createElement("TABLE");
   x.setAttribute("id", "oversiktTable");
   document.getElementById("alleKommunene").appendChild(x);

@@ -34,7 +34,7 @@ function enableNavigationButtons() {
 }
 
 function logLoadingMessage(sett) {
-  console.log(sett + " er lastet ned");
+  console.log("Datasettene er lastet ned");
 }
 
 //-----------------------Konstruktør-----------------------//
@@ -83,15 +83,13 @@ function konstruktør(fil){
         if (kategori == "befolk") { 
           // datasetter blir så lagt til i data til objektet
           befolkning.data = respons.elementer; 
-          // kaller på onload-funksjonen som man skulle.s
-          befolkning.onload(); 
         }
         if (kategori == "syssels") {
           sysselsatte.data = respons.elementer;
-          sysselsatte.onload();
         }
         if (kategori == "utdan") {
           utdanning.data = respons.elementer;
+         //Kaller på onload metoden
           utdanning.onload();
         }
       }
@@ -102,20 +100,14 @@ function konstruktør(fil){
 
 //Her oppretter vi objekter hvor hvert av datasettene og gir dem onload-egenskapen.
 var befolkning = new konstruktør("http://wildboy.uib.no/~tpe056/folk/104857.json");
-befolkning.onload = function() {
-  logLoadingMessage("Befolkningssettet");;
-};
 befolkning.load("befolk");
 
 var sysselsatte = new konstruktør("http://wildboy.uib.no/~tpe056/folk/100145.json");
-sysselsatte.onload = function() {
-  logLoadingMessage("Sysselsettingssettet");
-};
 sysselsatte.load("syssels");
 
 var utdanning = new konstruktør("http://wildboy.uib.no/~tpe056/folk/85432.json");
 utdanning.onload = function() {
-  logLoadingMessage("Utdanningssettet");
+  logLoadingMessage();
   enableNavigationButtons();
 };
 utdanning.load("utdan");

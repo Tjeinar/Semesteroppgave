@@ -1,4 +1,4 @@
- /*---Navigasjonsline---*/
+/*------------------------------Nav-bar-stil------------------------------*/
  /* Stil på listen i nav-bar  */
  .menu ul{
    display:block;
@@ -34,7 +34,7 @@ input[type="button"]{
   cursor:pointer;
 }
   
-/*---Generell dokumentstil---*/
+/*------------------------------Generell-stil------------------------------*/
 *{
   margin:0;
 }
@@ -70,7 +70,7 @@ main{
 
 
 
-/*---Tabell-stil--*/
+/*------------------------------Tabell-stil------------------------------*/
 
 /* Stil på plassering og formatering av tekst i Detaljer */
 #myTable td{font-size:16px;padding: 5px}
@@ -78,7 +78,6 @@ main{
 #myTable3 td{font-size:16px;padding: 2px}
 
 /* Tekst i tabell */
-
 td, input{
   font: Times;
 }
@@ -92,6 +91,9 @@ table, th, td{
 
   white-space: pre-wrap;
 }
+
+/*------------------------------Mobiltilpasning------------------------------*/
+
 /* Justerer innholdet i tabellen til å være vertikalt når det blir brukt små skjermers */
 @media screen and (max-width: 513px){
   tr { display: block; float: left; }
@@ -103,7 +105,7 @@ table, th, td{
   #alleKommunene,table{border:none;}
  
   };
-/*---Stil på introduksjonsteksten---*/
+/*------------------------------Introduksjonstekst-stil------------------------------*/
 #introduction{
   display:block;
   flex-direction: row;
@@ -121,6 +123,9 @@ table, th, td{
   font-weight: bold;
   padding-top:10px;
 }
+
+/*------------------------------Blokk-stil------------------------------*/
+
 /* Blokk-element for Oversikt */
 #overview{
   display:none;
@@ -150,11 +155,12 @@ display:none;
   overflow-x:scroll;
 }
 
+/* Plassering av punkt-liste i detaljer */
 #kortInfo{
   padding:20px;
 }
 
-/*---Footer---*/
+/*------------------------------Footer-stil------------------------------*/
 .footer{
   background-color: #333;
   color:#ffffff;

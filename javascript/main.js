@@ -175,12 +175,16 @@ function aktiverOversikt(target) {
 }
  
 function befolkningTabell(iden) {
+ //Henter informasjon om den kommunen
+  var be = befolkning.getInfo(iden);
+ //Legger til hvilke by det er som hoveroverskrift
+ var kæmBy = document.createElement("H1");
+  kæmBy.innerHTML = be.name;
+  document.getElementById("befolkede").appendChild(kæmBy);
+ //Legger til "Befolkning som overskirft over befolkningstabellen
   var overskr = document.createElement("H2");
   overskr.innerHTML = "Befolkning";
-  document.getElementById("befolkede").appendChild(overskr);
-
-  //Henter informasjon om den kommunen
-  var be = befolkning.getInfo(iden); 
+  document.getElementById("befolkede").appendChild(overskr); 
 
   //Oppretter en tabell
   var x = document.createElement("TABLE"); 

@@ -62,10 +62,10 @@ main{
 
 /*---Tabell-stil--*/
 
-/* Stil på plassering og formatering av tekst i tabeller */
-#myTable td{font-size:12px;padding: 5px}
-#myTable2 td{font-size:12px;padding: 5px}
-#myTable3 td{font-size:12px;padding: 2px}
+/* Stil på plassering og formatering av tekst i Detaljer */
+#myTable td{font-size:16px;padding: 5px}
+#myTable2 td{font-size:16px;padding: 5px}
+#myTable3 td{font-size:16px;padding: 2px}
 
 /* Tekst i tabell */
 
@@ -79,6 +79,7 @@ table, th, td{
   padding: 5px 5px;
   text-align: center;
   min-width: 20%;
+
   white-space: pre-wrap;
 }
 /* Justerer innholdet i tabellen til å være vertikalt når det blir brukt små skjermers */

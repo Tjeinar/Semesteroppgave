@@ -2,152 +2,94 @@
 <html lang="NB">
   <head>
     <meta charset="UTF-8">
+    <!-- 
+    <Meta> gir i dette tilfellet nettleseren instruksjoner på hvordan den skal kontrollere nettsidens dimensjoner og skalering
+    width=device-width gjør slik at bredden på siden blir tilpasset til enheten
+    initial-scale=1.0 bestemmer i hvilken grad innholdet på nettsiden skal forstørres når en først blir lastet inn 
+    -->
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="description here">
-    <link rel="stylesheet" href="styles.css" type="text/css">
-    <script src="main.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <!-- Javascript -->
+    <script src="javascript/main.js"></script>
     <title>Tall over norges befolkning</title>
   </head>
   <body>
-    <!--Navigasjon for det forskjellige innholdet sok skal presenters-->
+    <!--Meny-->
         <nav class ="menu">
           <ul>
-            <li><input type = "button" value="Introduksjon" onclick=""></li>
-            <li><input type = "button" value="Oversikt" onclick=""></li>
-            <li><input type = "button" value="Detaljer" onclick=""></li>
-            <li><input type = "button" value="Sammenligning"onclick=""></li>
+            <!-- Knapp for å vise Introduksjon og introduksjonstekst -->
+            <li><input type = "button" id="introduksjonButton" value="Introduksjon" onclick="showHide('introduction');" disabled></li>
+            <!-- Knapp for å vise Oversikt -->
+            <li><input type = "button" id="oversiktButton" value="Oversikt" onclick="aktiverOversikt('overview');" disabled></li>
+            <!-- Knapp for å vise Detaljer -->
+            <li><input type = "button" id="detaljerButton" value="Detaljer" onclick="showHide('details');" disabled></li>
+            <!-- Knapp for å vise Sammenligning -->
+            <li><input type = "button" id="sammenligningButton" value="Sammenligning" onclick="showHide('comparison');" disabled></li>
+            <!-- I forbindelse med å skjule/hente frem innholdet i hvert av disse fire blokkelementene tar vi i bruk en fuksjon med navn showHide, denne ligger i main.js -->
           </ul>
         </nav>
-        <!--Hoveddelen til nettstedet-->
+        <!--Ytterste wrapper til nettstedet-->
         <main class="main">
-        <!--De ulike elementene som skal bli presentert, disse vil bli plassert og stylet ved hjelp av flexbox-css-->
-          <div class= flex-container>
-             <!--Input-felt hvor brukeren kan søke på kommunenummer.-->
-             <div class="search">
-                <input type="text" id="searchTerm" onkeyup="searchFunction()" placeholder="Søk på kommune...">
-              </div>
-              <!--Introduksjonen består av tekst som beskriver produktet vårt, lenker til SSB-sine offentlige nettsider, og en notis om mulig feil i datasett-->
+        <!-- Wrapper for de fire ulike elementene som skal presenteres på nettstedet -->
             <div id="introduction">
-            <!--Tekst for å introdusere brukeren til siden, og innholdet-->
             <article class="intro-txt">
-              Dette nettstedet er laget for å presentere produktet vårt.<br><br>
-              Produktet vårt er et verktøy for å vise data om Norges befolkning ved hjelp av data fra ssb.no <br><br>
-              <p id="notice">OBS! Tallene kan inneholde feil, vi tar forbehold om avvik i dataen som blir presentert.</p><br><br> 
-              
-              <!--Lenker til datasettene som blir brukt og presentert på nettstedet-->
-              Lenker til SSB-sine datasett:
-              <ul class="links">
-              <li><a href="http://data.ssb.no/api/v0/dataset/104857?lang=no">Befolkning, etter kjønn, Kommuner pr 1.1.2007 - siste år</a></li><br>
-              <li><a href="http://data.ssb.no/api/v0/dataset/100145?lang=no">Sysselsatte pr. 4. kv. etter kjønn og alder (andel i prosent). Kommuner, 2005 - siste år</a></li><br>
-              <li><a href="http://data.ssb.no/api/v0/dataset/85432?lang=no">Utdannningsnivå. Personer 16 år og over, etter kjønn, i prosent. Kommuner, 1970 - siste år</a></li>
-              </ul>		
+              <section>
+                <h1 class = main_header>Informasjon om nettstedet</h1>
+                <p id="info-txt">Dette nettstedet er et verktøy for å vise data om Norges befolkning ved hjelp av data fra Statistisk sentralbyrå.<br><br>
+                Informasjon om innholdet på siden:<br><br>
+                Oversikt viser alle kommunene i Norge med navn, kommunenummer, og siste måling av total befolkning. <br><br>
+                Detaljer viser mer detaljert informasjon ved å søke på et kommunenummer.
+                Søkeresultatet vil vise en oversikt med kommunens navn, kommunenummer, siste målt befolkning, siste målte statistikk for sysselsetning og høyere utdanning.<br><br>
+                Sammenligning er et verktøy for å sammenligne to kommuner ved å skrive inn to gyldige kommunenummer. Dette vil vise historisk data for utvikling av sysselsetning for menn og kvinner i begge kommunene.
+                Høyest vekst er markert med grønn skrift.</p>
+              </section>
+              <section>
+                <!-- Notis angående data som blir presentert -->
+                <p id="notice">OBS! Tallene kan inneholde feil, vi tar forbehold om avvik i dataen som blir presentert.</p><br><br> 
+                <!--Lenker til datasettene som blir brukt og presentert på nettstedet-->
+                <p><strong>Lenker til SSB-sine datasett:</strong></p>
+                <ul class="links">
+                  <li><a href="http://data.ssb.no/api/v0/dataset/104857?lang=no">Befolkning, etter kjønn, Kommuner pr 1.1.2007 - siste år</a></li>
+                  <li><a href="http://data.ssb.no/api/v0/dataset/100145?lang=no">Sysselsatte pr. 4. kv. etter kjønn og alder (andel i prosent). Kommuner, 2005 - siste år</a></li>
+                  <li><a href="http://data.ssb.no/api/v0/dataset/85432?lang=no">Utdannningsnivå. Personer 16 år og over, etter kjønn, i prosent. Kommuner, 1970 - siste år</a></li>
+                </ul>
+              </section>	
             </article>
           </div>
         
               <!--Oversikt av kommunene ved hjelp av navn, kommunenumer og siste befolkningsmåling-->
-              <div id="overview">
-                <table>
-                  <thead>
-                    <tr id="overview-name">
-                      <th>Kommunenavn</th>
-                    </tr>
-                    <tr id="overview-nr">
-                      <th>Kommmunenummer</th>
-                    </tr>
-                    <tr id ="overview-m">
-                      <th>Befolkning Menn</th>
-                    </tr>
-                    <tr id = "overview-w">
-                      <th>Befolkning Kvinner</th>
-                    </tr>
-                  </thead>
-                  <tbody></tbody>
-                </table>
-              </div>
-              
-              <div id="overview-mobile">
-                  <table>
-                      <thead>
-                        <th>Kommunenavn</th>
-                        <th>Kommunenummer</th>
-                        <th>Befolkning Menn</th>
-                        <th>Befolkning Kvinner</th>
-                      </thead>
-                      <tbody id="overview-small-screen"></tbody>
-                    </table>
+              <div  id="overview">
+                <div id="alleKommunene">
+                </div>
               </div>
               
               <!--Lar brukeren skrive inn et kommunenummer og viser informasjon basert på dette-->
-              <!-- TODO: Skal vise: Kommunenavn, Kommunenummer, siste målte befolkning, siste målte statistikk for sysselsetting og høyereutdanning (antall og prosent) -->
-              <div id="details"><table>
-                <thead>
-                  <tr id="details-name">
-                    <th>Kommunenavn</th>
-                  </tr>
-                  <tr id="details-nr">
-                    <th>Kommmunenummer</th>
-                  </tr>
-                  <tr id ="details-m">
-                    <th>Befolkning Menn(%)</th>
-                  </tr>
-                  <tr id = "details-w">
-                    <th>Befolkning Kvinner(%)</th>
-                  <!-- TODO: Skal også vise: historisk utvikling i form av tabeller for sysselsetting, befolkning og utdanning -->
-                  </tr>
-                </thead>
-                <tbody></tbody>
-              </table>
-            </div>
-            <div id="details-mobile">
-                <table>
-                    <thead>
-                      <th>Kommunenavn</th>
-                      <th>Kommunenummer</th>
-                      <th>Befolkning Menn(%)</th>
-                      <th>Befolkning Kvinner(%)</th>
-                    </thead>
-                    <tbody id="details-small-screen"></tbody>
-                  </table>
-            </div>
+              <div id="details">
+                <input type="text" placeholder="Kommunenummer..." id="byenNummer">
+                <button id="knapp" onclick="oppsett()">Søk</button>
+                <div id="kortInfo">
+                </div>
+                <div id="befolkning">
+                </div>
+                <div id="sysselsatte">
+                </div>
+                <div id="utdannede">
+                </div>
+              </div>
+            
               <!--Lar brukeren skrive inn to kommunummer og viser data for utvikling av sysselsettning.-->
               <div id="comparison">
-                <div id="comparison-table-1">
-                  <thead>
-                    <tr id = "comparison-table-1-name"></tr>
-                    <th>Historisk utvikling for sysselsetting</th>
-                  </thead>
-                </div>
-                <div id="comparison-table-2">
-                  <thead>
-                    <tr id="comparison-table-2-name"></tr>
-                    <th>Historisk utvikling for sysselsetting</th>
-                  </thead>
+                <input type="text" placeholder="Kommune 1" id="sammenligneNummer1">
+                <button id="SL" onclick="sammenlign()">Sammenligne</button>
+                <input type="text" placeholder="Kommune 2" id="sammenligneNummer2">
+                <div id="sammenlignelser">
                 </div>
               </div>
-            <div id="comparison-mobile">
-              <div id="comparison-table-1-mobile">
-                  <table>
-                      <thead>
-                        <th>Historisk utvikling for sysselsetting</th>
-                      </thead>
-                      <tbody id="comparison-table-1-small-screen"></tbody>
-                    </table>
-              </div>
-
-              <div id="comparison-table-2-mobile">
-                  <table>
-                      <thead>
-                        <th>Historisk utvikling for sysselsetting</th>
-                      </thead>
-                      <tbody id="comparison-table-2-small-screen"></tbody>
-                    </table>
-              </div>
-          </div>
-        </div>
       </main>
         <!--Footer for nettstedet-->
         <footer class="footer">
-          <p id="footer-text">Eksamensbesvarelse INFO134</p>
+          <p id="footer-text">Oppgavebesvarelse INFO134</p>
       </footer>
   </body>
 </html>

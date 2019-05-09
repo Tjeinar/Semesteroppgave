@@ -5,21 +5,17 @@ I denne oppgaven skal vi lage et verktøy som viser data om norges befolkning.
 
 # TODO
 
-# Hovedinnhold: 
-- Vise historisk utvikling i form av tabeller/lister for befolkning sysselsetting og utdanning.
+- Fikse når en skriver inn et ugyldig nummer med ærre en fire siffer
 
-## Sammenligning
-- Skal i utgangspunktet ikke vise noen informasjon
-- Lage input felt for to gyldige kommunenummer
-- Vise historisk data for utvikling av sysselsetting for hver kjønnskategori i begge kommunene. 
-- For hvert år og hver kjønnskategori skal kommunen med høyest vekst i prosentpoeng, markerest. 
+- Fikse kommunummer bug (0218-bug)
+
+##Details
+
+- Fikse et wrapping issue på liten skjerm
 
 # Presentasjon
 - Presentere data vertikalt på liten skjerm
 - Ellers presentere data horisontalt
-
-# Data
-
 
 # Rapport og øvrige filer
 - Beskriv hver fil kort (1-2 setninger)

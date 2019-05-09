@@ -15,8 +15,8 @@
 
 // Sørger for at bare 1 av de fire blokk-elemente er synlig til enhver tid. Blir styrt gjennom nav-bar
 function showHide(div) {
-  var liste = ["introduksjon", "oversikt", "detaljer", "sammenligning"];
-  for (var i in liste) {
+  var liste = ["introduction", "overview", "details", "comparison"]
+  for (i in liste) {
     if (liste[i] == div) {
       document.getElementById(liste[i]).style.display = "block";
     }
@@ -103,7 +103,7 @@ function konstruktør(fil){
 //Her oppretter vi objekter hvor hvert av datasettene og gir dem onload-egenskapen.
 var befolkning = new konstruktør("http://wildboy.uib.no/~tpe056/folk/104857.json");
 befolkning.onload = function() {
-  logLoadingMessage("Befolkningssettet");
+  logLoadingMessage("Befolkningssettet");;
 };
 befolkning.load("befolk");
 

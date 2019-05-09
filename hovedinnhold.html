@@ -17,13 +17,13 @@
         <nav class ="menu">
           <ul>
             <!-- Knapp for å vise Introduksjon og introduksjonstekst -->
-            <li><input type = "button" value="Introduksjon" onclick="showHide('introduction');"></li>
+            <li><input type = "button" id="introduksjonButton" value="Introduksjon" onclick="showHide('introduction') disabled;"></li>
             <!-- Knapp for å vise Oversikt -->
-            <li><input type = "button" value="Oversikt" onclick="aktiverOversikt('overview');"></li>
+            <li><input type = "button" id="oversiktButton" value="Oversikt" onclick="aktiverOversikt('overview');" disabled></li>
             <!-- Knapp for å vise Detaljer -->
-            <li><input type = "button" value="Detaljer" onclick="showHide('details');"></li>
+            <li><input type = "button" id="detaljerButton" value="Detaljer" onclick="showHide('details');" disabled></li>
             <!-- Knapp for å vise Sammenligning -->
-            <li><input type = "button" value="Sammenligning"onclick="showHide('comparison');"></li>
+            <li><input type = "button" id="sammenligningButton" value="Sammenligning"onclick="showHide('comparison');" disabled></li>
             <!-- I forbindelse med å skjule/hente frem innholdet i hvert av disse fire blokkelementene tar vi i bruk en fuksjon med navn showHide, denne ligger i main.js -->
           </ul>
         </nav>

@@ -357,14 +357,14 @@ function sammenlignByer() {
       document.getElementById("slTable").rows[4].cells[i - 1].innerText;
     //Her ser vi hvilke rad som har størst økning og fargelegger det tallet som har størst økning
     if (menn1Utvikling > menn2Utvikling) {
-      document.getElementById("slTable").rows[1].cells[i].style.color = "red";
+      document.getElementById("slTable").rows[1].cells[i].style.color = "pink";
     } else {
-      document.getElementById("slTable").rows[2].cells[i].style.color = "red";
+      document.getElementById("slTable").rows[2].cells[i].style.color = "pink";
     }
     if (kvinner1Utvikling > kvinner2Utvikling) {
-      document.getElementById("slTable").rows[3].cells[i].style.color = "red";
+      document.getElementById("slTable").rows[3].cells[i].style.color = "pink";
     } else {
-      document.getElementById("slTable").rows[4].cells[i].style.color = "red";
+      document.getElementById("slTable").rows[4].cells[i].style.color = "pink";
     }
   }
 }

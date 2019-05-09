@@ -24,11 +24,14 @@ function showHide(knæpp) {
 }
 
 function enableNavigationButtons() {
-  //Noe drit her
+  document.getElementById("introduksjonButton").disabled = false;
+  document.getElementById("oversiktButton").disabled = false;
+  document.getElementById("detaljerButton").disabled = false;
+  document.getElementById("sammenligningButton").disabled = false;
 }
 
-function removeLoadingMessage() {
-  //Enda mer drit her
+function logLoadingMessage(sett) {
+  console.log(sett + " er lastet ned");
 }
 
 function konstruktør(fil){
@@ -89,22 +92,20 @@ function konstruktør(fil){
 //Her oppretter vi objekter hvor hvert av datasettene og gir dem onload-egenskapen.
 var befolkning = new konstruktør("http://wildboy.uib.no/~tpe056/folk/104857.json");
 befolkning.onload = function() {
-  enableNavigationButtons();
-  removeLoadingMessage();
+  logLoadingMessage("Befolkningssettet");;
 };
 befolkning.load("befolk");
 
 var sysselsatte = new konstruktør("http://wildboy.uib.no/~tpe056/folk/100145.json");
 sysselsatte.onload = function() {
-  enableNavigationButtons();
-  removeLoadingMessage();
+  logLoadingMessage("Sysselsettingssettet");
 };
 sysselsatte.load("syssels");
 
 var utdanning = new konstruktør("http://wildboy.uib.no/~tpe056/folk/85432.json");
 utdanning.onload = function() {
+  logLoadingMessage("Utdanningssettet");
   enableNavigationButtons();
-  removeLoadingMessage();
 };
 utdanning.load("utdan");
 

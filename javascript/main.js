@@ -414,6 +414,11 @@ function sammenlignByer() {
     leggTilInfoIRaden("antallSY1Kvinner", sy1.data.Kvinner[i]);
     leggTilInfoIRaden("antallSY2Kvinner", sy2.data.Kvinner[i]);
   }
+ //Her skjekker vi om sammenliknelsen foregår av like byer eller ikke
+ if (sy1.name == sy2.name) {
+    undefined
+  }
+ else {
   //Her går vi gjennom hvert år og sammenligner det med det forje året.
   // Siden vi skulle se på økningen har vi startet på 2006, siden det ikke er noen økning fra 2004 til 2005.
   //Dersom starter var i på 2.
@@ -447,6 +452,7 @@ function sammenlignByer() {
       document.getElementById("slTable").rows[4].cells[i].style.fontWeight = "bold";
     }
   }
+ };
 }
 
 function sammenlign() {

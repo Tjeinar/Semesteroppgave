@@ -33,7 +33,7 @@ function enableNavigationButtons() {
   document.getElementById("sammenligningButton").disabled = false;
 }
 
-function logLoadingMessage(sett) {
+function logLoadingMessage() {
   console.log("Datasettene er lastet ned");
 }
 
@@ -146,7 +146,13 @@ function nummerSkjekk(nummer) {
     return false;
   }
   else {
-    return true;
+   //Skjekker at nummeret er det samme i hvert datasett
+    if (befolkning.getInfo(nummer).name == sysselsatte.getInfo(nummer).name && befolkning.getInfo(nummer).name == utdanning.getInfo(nummer).name) {
+      return true;
+    }
+    else {
+      return false;
+    };
   }
 }
 

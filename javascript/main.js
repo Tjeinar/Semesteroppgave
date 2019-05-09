@@ -222,7 +222,7 @@ function sysselsatteTabell(iden) {
 
   lagEnRad("myTable2", "årene", "År");
 
-  lagEnRad("myTable2", "antallet", "Antall");
+  lagEnRad("myTable2", "antallet", "Prosentandel");
 
   for (var i in sy.data["Begge kjønn"]) {
     //Går gjennom hvert år

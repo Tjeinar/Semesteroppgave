@@ -122,7 +122,6 @@ utdanning.load("utdan");
 
 //-----------------------Lage tabell-----------------------//
 
-
 /*
 id1 = iden til tabellen som raden skal bli lagt til
 id2 = iden til raden som blir lagt til

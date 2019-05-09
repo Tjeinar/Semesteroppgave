@@ -34,7 +34,7 @@ function enableNavigationButtons() {
 }
 
 function logLoadingMessage() {
-  console.log(Datasettene er lastet ned");
+  console.log("Datasettene er lastet ned");
 }
 
 //-----------------------Konstruktør-----------------------//

@@ -311,7 +311,7 @@ function lagListeItem(id, data) {
   document.getElementById(id).appendChild(y);
 }
 
-<---------- //Funksjon som lager en en punktvis liste
+//Funksjon som lager en en punktvis liste
 
 function punktvisInfo(nummer) {
 //Definerer info fra hvert datasett

@@ -158,7 +158,6 @@ function nummerSkjekk(nummer) {
 
 //-----------------------Oversikt-----------------------//
 
-
 function oversiktTabell() {
  //Tømmer diven for ny tabell
  document.getElementById("alleKommunene").innerHTML = "";
@@ -301,7 +300,6 @@ function utdanningTabell(iden) {
   }
 }
 
-
 //id = hvilke liste liste-itemet skal bli lagt til i
 //data = det som skal skal stå i liste-itemet
 function lagListeItem(id, data) {
@@ -312,7 +310,6 @@ function lagListeItem(id, data) {
 }
 
 //Funksjon som lager en en punktvis liste
-
 function punktvisInfo(nummer) {
 //Definerer info fra hvert datasett
   var be = befolkning.getInfo(nummer),
@@ -416,7 +413,6 @@ function sammenlignByer() {
   }
  //Her skjekker vi om sammenliknelsen foregår av like byer eller ikke
  if (sy1.name == sy2.name) {
-    undefined
   }
  else {
   //Her går vi gjennom hvert år og sammenligner det med det forje året.
@@ -452,8 +448,9 @@ function sammenlignByer() {
       document.getElementById("slTable").rows[4].cells[i].style.fontWeight = "bold";
     }
   }
- };
+ }
 }
+//-----------------------Setter inn data i sammenligning-----------------------//
 
 function sammenlign() {
   document.getElementById("sammenlignelser").innerHTML = "";

@@ -1,4 +1,7 @@
 # Semesteroppgave
-Semesteroppgave info134
+Semesteroppgave Info134
 
-Oppgave hvor vi skulle presentere datasett fra ssb
+Eksamensoppgave hvor vi skulle presentere data fra datasett hentet fra SSB.no
+
+Vi skulle vise data om befolkning i alle Norges kommuner, data for sysselsetting og utdannelse.
+

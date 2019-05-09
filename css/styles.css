@@ -58,10 +58,7 @@ main{
   text-decoration: none;
 }
 
-/* "Skrolle-hjul" dersom innholdet skulle flyte utenfor boksen sin */
-#befolkede, #sysselsetting, #utdannede{
-  overflow-x:scroll;
-}
+
 
 /*---Tabell-stil--*/
 
@@ -102,8 +99,11 @@ table, th, td{
   font-size: auto;
   flex-wrap: wrap;
   padding-bottom: 20px;
-  max-width:500px;
   font-size: small;
+}
+/* Begrenser bredden på teksten i introduksjonen */
+.intro-txt{
+  max-width:500px;
 }
 /* Data-notis */
 #notice{
@@ -133,6 +133,10 @@ display:none;
 #sammenlignelser{
   padding-top:10px;
 }
+/* "Skrolle-hjul" dersom innholdet skulle flyte utenfor boksen sin */
+#utdannede{
+  overflow-x:scroll;
+}
 
 /*---Footer---*/
 .footer{
@@ -145,7 +149,7 @@ display:none;
   overflow:hidden;
   text-align: center;
 }
-
+ 
 #footer-text{
   margin:5px;
 }

@@ -351,16 +351,20 @@ function sammenlignByer() {
     var kvinner2Utvikling =
       document.getElementById("slTable").rows[4].cells[i].innerText -
       document.getElementById("slTable").rows[4].cells[i - 1].innerText;
-    //Her ser vi hvilke rad som har størst økning og fargelegger det tallet som har størst økning
+    //Her ser vi hvilke rad som har størst økning og legger på stil
     if (menn1Utvikling > menn2Utvikling) {
-      document.getElementById("slTable").rows[1].cells[i].style.color = "red";
+      document.getElementById("slTable").rows[1].cells[i].style.color = "green";
+      document.getElementById("slTable").rows[1].cells[i].style.fontWeight = "bold";
     } else {
-      document.getElementById("slTable").rows[2].cells[i].style.color = "red";
+      document.getElementById("slTable").rows[2].cells[i].style.color = "green";
+      document.getElementById("slTable").rows[2].cells[i].style.fontWeight = "bold";
     }
     if (kvinner1Utvikling > kvinner2Utvikling) {
-      document.getElementById("slTable").rows[3].cells[i].style.color = "red";
+      document.getElementById("slTable").rows[3].cells[i].style.color = "green";
+      document.getElementById("slTable").rows[3].cells[i].style.fontWeight = "bold";
     } else {
-      document.getElementById("slTable").rows[4].cells[i].style.color = "red";
+      document.getElementById("slTable").rows[4].cells[i].style.color = "green";
+      document.getElementById("slTable").rows[4].cells[i].style.fontWeight = "bold";
     }
   }
 }

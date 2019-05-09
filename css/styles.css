@@ -52,6 +52,16 @@ main{
   min-height: 100%
 }
 
+/* Scroll-bar */
+::-webkit-scrollbar{
+  width:0px;
+}
+
+::-webkit-scrollbar-thumb{
+  background: rgba(34, 28, 28, 0.151);
+
+}
+
 
 /*---Stil på lenker---*/
 .links, a, a:visited{

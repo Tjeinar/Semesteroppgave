@@ -25,7 +25,7 @@
             <!-- Knapp for å vise Detaljer -->
             <li><input type = "button" id="detaljerButton" value="Detaljer" onclick="showHide('details');" disabled></li>
             <!-- Knapp for å vise Sammenligning -->
-            <li><input type = "button" id="sammenligningButton" value="Sammenligning"onclick="showHide('comparison');" disabled></li>
+            <li><input type = "button" id="sammenligningButton" value="Sammenligning" onclick="showHide('comparison');" disabled></li>
             <!-- I forbindelse med å skjule/hente frem innholdet i hvert av disse fire blokkelementene tar vi i bruk en fuksjon med navn showHide, denne ligger i main.js -->
           </ul>
         </nav>
@@ -41,18 +41,17 @@
                 Oversikt viser alle kommunene i Norge med navn, kommunenummer, og siste måling av total befolkning. <br><br>
                 Detaljer viser mer detaljert informasjon ved å søke på et kommunenummer.
                 Søkeresultatet vil vise en oversikt med kommunens navn, kommunenummer, siste målt befolkning, siste målte statistikk for sysselsetning og høyere utdanning.<br><br>
-                Sammenligning er et verktøy for å sammenligne to kommuner ved å skrive inn to gyldige kommunenummer. <br> 
-                Dette vil vise historisk data for utvikling av sysselsetning for menn og kvinner i begge kommunene.
+                Sammenligning er et verktøy for å sammenligne to kommuner ved å skrive inn to gyldige kommunenummer. Dette vil vise historisk data for utvikling av sysselsetning for menn og kvinner i begge kommunene.
                 Høyest vekst er markert med grønn skrift.</p>
               </section>
               <section>
                 <!-- Notis angående data som blir presentert -->
                 <p id="notice">OBS! Tallene kan inneholde feil, vi tar forbehold om avvik i dataen som blir presentert.</p><br><br> 
                 <!--Lenker til datasettene som blir brukt og presentert på nettstedet-->
-                <p>Lenker til SSB-sine datasett:</p>
+                <p><strong>Lenker til SSB-sine datasett:</strong></p>
                 <ul class="links">
-                  <li><a href="http://data.ssb.no/api/v0/dataset/104857?lang=no">Befolkning, etter kjønn, Kommuner pr 1.1.2007 - siste år</a></li><br>
-                  <li><a href="http://data.ssb.no/api/v0/dataset/100145?lang=no">Sysselsatte pr. 4. kv. etter kjønn og alder (andel i prosent). Kommuner, 2005 - siste år</a></li><br>
+                  <li><a href="http://data.ssb.no/api/v0/dataset/104857?lang=no">Befolkning, etter kjønn, Kommuner pr 1.1.2007 - siste år</a></li>
+                  <li><a href="http://data.ssb.no/api/v0/dataset/100145?lang=no">Sysselsatte pr. 4. kv. etter kjønn og alder (andel i prosent). Kommuner, 2005 - siste år</a></li>
                   <li><a href="http://data.ssb.no/api/v0/dataset/85432?lang=no">Utdannningsnivå. Personer 16 år og over, etter kjønn, i prosent. Kommuner, 1970 - siste år</a></li>
                 </ul>
               </section>	
@@ -67,7 +66,7 @@
               
               <!--Lar brukeren skrive inn et kommunenummer og viser informasjon basert på dette-->
               <div id="details">
-                <input type="text" placeholder="Kommunenummer..."id="byenNummer">
+                <input type="text" placeholder="Kommunenummer..." id="byenNummer">
                 <button id="knapp" onclick="oppsett()">Søk</button>
                 <div id="kortInfo">
                 </div>

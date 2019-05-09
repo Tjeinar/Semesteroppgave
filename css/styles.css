@@ -95,7 +95,7 @@ table, th, td{
   };
 /*---Stil på introduksjonsteksten---*/
 #introduction{
-  display:flex;
+  display:block;
   flex-direction: row;
   font-size: auto;
   flex-wrap: wrap;

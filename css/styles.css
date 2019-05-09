@@ -133,9 +133,10 @@ display:none;
 }
 #sammenlignelser{
   padding-top:10px;
+  overflow-x:scroll;
 }
 /* "Skrolle-hjul" dersom innholdet skulle flyte utenfor boksen sin */
-#utdannede{
+#befolkning, #sysselsatte, #utdannede{
   overflow-x:scroll;
 }
 

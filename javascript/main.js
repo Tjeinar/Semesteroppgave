@@ -11,10 +11,13 @@
 ************************************************************************
 */
 
-function showHide(knæpp) {
+//-----------------------Hvis/skjul blokkelementer-----------------------//
+
+// Sørger for at bare 1 av de fire blokk-elemente er synlig til enhver tid. Blir styrt gjennom nav-bar
+function showHide(div) {
   var liste = ["introduction", "overview", "details", "comparison"]
   for (i in liste) {
-    if (liste[i] == knæpp) {
+    if (liste[i] == div) {
       document.getElementById(liste[i]).style.display = "block";
     }
     else{
@@ -31,29 +34,37 @@ function removeLoadingMessage() {
   //Enda mer drit her
 }
 
+//-----------------------Konstruktør-----------------------//
+
 function konstruktør(fil){
-  this.data = undefined; //Her kommer datasettene når de er lastet ned
+  this.data = undefined; 
+  //Her kommer datasettene når de er lastet neds
   this.getNames = function() {
     var liste = [];
     for (var f in this.data) {
-      liste.push(f); //lager en liste med alle navnene
+      //lager en liste med alle navnene
+      liste.push(f); 
     }
     return liste;
   };
   this.getIDs = function() {
     var liste = [];
     for (var f in this.data) {
-      liste.push(this.data[f].kommunenummer); //lager en liste med alle kommunenummrene
+      //lager en liste med alle kommunenummrene
+      liste.push(this.data[f].kommunenummer); 
     }
     return liste;
   };
   this.getInfo = function(kn){
-    for (var g in this.data) { //Går gjennom alle kommunenummrene
-      if (this.data[g].kommunenummer == kn){ //Når vi kommer til det rette kommunenummeret
+     //Går gjennom alle kommunenummrene
+    for (var g in this.data) {
+       //Når vi kommer til det rette kommunenummerets
+      if (this.data[g].kommunenummer == kn){
         var q = new Object;
         q.name = g;
         q.data = this.data[g];
-        return q; // og informasjonen om datasettet.
+        // og informasjonen om datasettet.
+        return q; 
       }
     }
   };
@@ -108,6 +119,9 @@ utdanning.onload = function() {
 };
 utdanning.load("utdan");
 
+//-----------------------Lage tabell-----------------------//
+
+
 /*
 id1 = iden til tabellen som raden skal bli lagt til
 id2 = iden til raden som blir lagt til
@@ -144,10 +158,13 @@ function nummerSkjekk(nummer) {
   }
 }
 
+//-----------------------Oversikt-----------------------//
+
+
 function oversiktTabell() {
  //Tømmer diven for ny tabell
  document.getElementById("alleKommunene").innerHTML = "";
- //Lager en tabel
+ //Lager en tabell
   var x = document.createElement("TABLE");
   x.setAttribute("id", "oversiktTable");
   document.getElementById("alleKommunene").appendChild(x);
@@ -174,25 +191,27 @@ function aktiverOversikt(target) {
  oversiktTabell();
  showHide(target);
 }
- 
+
+//-----------------------Befolkning del-tabell-----------------------//
+
 function befolkningTabell(iden) {
  //Henter informasjon om den kommunen
   var be = befolkning.getInfo(iden);
  //Legger til hvilke by det er som hoveroverskrift
  var kæmBy = document.createElement("H1");
   kæmBy.innerHTML = be.name;
-  document.getElementById("befolkede").appendChild(kæmBy);
+  document.getElementById("befolkning").appendChild(kæmBy);
  //Legger til "Befolkning som overskirft over befolkningstabellen
   var overskr = document.createElement("H2");
   overskr.innerHTML = "Befolkning";
-  document.getElementById("befolkede").appendChild(overskr); 
+  document.getElementById("befolkning").appendChild(overskr); 
 
   //Oppretter en tabell
   var x = document.createElement("TABLE"); 
   //Gir den ID : MyTable
   x.setAttribute("id", "myTable"); 
-  //Legger tabellen til befolkede-diven
-  document.getElementById("befolkede").appendChild(x);
+  //Legger tabellen til befolkning-diven
+  document.getElementById("befolkning").appendChild(x);
   lagEnRad("myTable", "år", "År");
   lagEnRad("myTable", "antall", "Antall");
 
@@ -207,10 +226,12 @@ function befolkningTabell(iden) {
   }
 }
 
+//-----------------------Sysselsatte del-tabell-----------------------//
+
 function sysselsatteTabell(iden) {
   var overskr = document.createElement("H2");
   overskr.innerHTML = "Sysselsatte";
-  document.getElementById("sysselsetting").appendChild(overskr);
+  document.getElementById("sysselsatte").appendChild(overskr);
 
   //Henter informasjon om sysselsetting om den gitte byen
   var sy = sysselsatte.getInfo(iden); 
@@ -218,7 +239,7 @@ function sysselsatteTabell(iden) {
   //Oppretter en tabell
   var x = document.createElement("TABLE"); 
   x.setAttribute("id", "myTable2");
-  document.getElementById("sysselsetting").appendChild(x);
+  document.getElementById("sysselsatte").appendChild(x);
 
   lagEnRad("myTable2", "årene", "År");
 
@@ -236,6 +257,8 @@ function sysselsatteTabell(iden) {
     leggTilInfoIRaden("antallet", sy.data["Begge kjønn"][i]);
   }
 }
+
+//-----------------------Utdanning del-tabell-----------------------//
 
 function utdanningTabell(iden) {
   var overskr = document.createElement("H2");
@@ -284,11 +307,13 @@ function utdanningTabell(iden) {
   }
 }
 
+//-----------------------Tabell-oppsett-----------------------//
+
 function oppsett() {
   //Tømmer diven slik at den er klar for ny tabell
-  document.getElementById("befolkede").innerHTML = ""; 
+  document.getElementById("befolkning").innerHTML = ""; 
   //Tømmer diven..
-  document.getElementById("sysselsetting").innerHTML = ""; 
+  document.getElementById("sysselsatte").innerHTML = ""; 
    //Tømmer diven..
   document.getElementById("utdannede").innerHTML = "";
    //Nummer er den id'en som bruker vil få info om
@@ -305,9 +330,11 @@ function oppsett() {
   } else {
     var overskr = document.createElement("H2");
     overskr.innerHTML = "Det finnes ingen by med det kommunenummeret";
-    document.getElementById("befolkede").appendChild(overskr);
+    document.getElementById("befolkning").appendChild(overskr);
   }
 }
+
+//-----------------------Sammenligning-----------------------//
 
 function sammenlignByer() {
   //Lager to variabeler som bruker getInfo() egenskapen til å hente info om hver kommune
@@ -374,8 +401,7 @@ function sammenlignByer() {
   }
 }
 
-
-function heiaBrann() {
+function sammenlign() {
   document.getElementById("sammenlignelser").innerHTML = "";
   var nummerEn = nummerSkjekk(document.getElementById("sammenligneNummer1").value);
   var nummerTo = nummerSkjekk(document.getElementById("sammenligneNummer2").value);

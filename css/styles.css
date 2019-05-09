@@ -100,7 +100,6 @@ table, th, td{
   padding: 5px 5px;
   text-align: center;
   min-width: 20%;
-
   white-space: pre-wrap;
 }
 
@@ -110,12 +109,13 @@ table, th, td{
 @media screen and (max-width: 513px){
   tr { display: block; float: left; }
   td { display: block; }
+  /* Plasserer tabellene litt fra hverandre */
   #antall{padding-left:20px}
   #antallet{padding-left:20px}
+  /* Gjør teksten mindre og fjerner padding for å få plass til alle radene på små skjermer */
   #alleKommunene,table,td,tr{font-size:9px; padding:0;}
   /* Fjerner en ekstra boks rundt tabellen*/
   #alleKommunene,table{border:none;}
- 
   };
 /*------------------------------Introduksjonstekst-stil------------------------------*/
 #introduction{

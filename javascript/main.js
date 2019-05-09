@@ -160,6 +160,9 @@ function nummerSkjekk(nummer) {
 }
 
 function oversiktTabell() {
+ //Tømmer diven for ny tabell
+ document.getElementById("alleKommunene").innerHTML = "";
+ //Lager en tabel
   var x = document.createElement("TABLE");
   x.setAttribute("id", "oversiktTable");
   document.getElementById("alleKommunene").appendChild(x);
